@@ -48,7 +48,7 @@ You can choose to configure the IRI by specifying the configuration options in t
 |<a name="udp-receiver-port"></a>`-u`, `--udp-receiver-port` |Port from which the IRI receives UDP data packets from neighbor IRI nodes |string |14600 |
 |<a name="zmq-enabled"></a>  `--zmq-enabled` | Enable [zero message queue](../concepts/zero-message-queue.md) subscriptions| boolean|false |
 |<a name="zmq-ipc"></a>`--zmq-ipc` |Path that is used to communicate with ZMQ in IPC| string|  ipc://iri|
-|<a name="zmq-port"></a> `--zmq-port `|Port that is used to connect to the ZMQ feed |string | 5556|
+|<a name="zmq-port"></a> `--zmq-port `|Port that is used to connect to the ZMQ feed |string | 5556| |
 
 ### IRI Configuration file
 | **Configuration options** |   **Description**| **Accepted values** | **Default values**|**Notes** |
@@ -59,4 +59,6 @@ You can choose to configure the IRI by specifying the configuration options in t
 |<a name="local-snapshots-pruning-delay"></a>`LOCAL_SNAPSHOTS_PRUNING_DELAY`  | Amount of milestone transactions to keep in the ledger   | number starting from 10,000  | 40,000 | We recommend that you use the default value for this option, which triggers a local snapshot around every 28 days.  |
 |<a name="local-snapshots-interval-synced"></a>`LOCAL_SNAPSHOTS_INTERVAL_SYNCED`  | Interval, in milestone transactions, at which snapshot files are created if the ledger is fully synchronized  |number| 10   | |
 |<a name="local-snapshots-interval-unsynced"></a>`LOCAL_SNAPSHOTS_INTERVAL_UNSYNCED`   | Interval, in milestone transactions, at which snapshot files are created if the ledger is not fully synchronized  |number| 1,000  | This value is higher than the `LOCAL_SNAPSHOTS_INTERVAL_SYNCED` configuration option to allow the IRI to focus its resources on synchronizing with its neighbor IRI nodes|
-|<a name="local-snapshots-base-path"></a>`LOCAL_SNAPSHOTS_BASE_PATH`  |  Path to the snapshot file, without the file extension. |  string |  mainnet   | Prepends the `.snapshot.meta` and `.snapshot.state` files with the value of this parameter. For the default value, the files are named `mainnet.snapshot.meta` and `mainnet.snapshot.state`. You can specify a directory for the files to be added to by doing the following: `<directory name>/<file name>`, which results in `folderpath/filename.snapshot.meta`. | |
+|<a name="local-snapshots-base-path"></a>`LOCAL_SNAPSHOTS_BASE_PATH`  |  Path to the snapshot file, without the file extension. |  string |  mainnet   | Prepends the `.snapshot.meta` and `.snapshot.state` files with the value of this parameter. For the default value, the files are named `mainnet.snapshot.meta` and `mainnet.snapshot.state`. You can specify a directory for the files to be added to by doing the following: `<directory name>/<file name>`, which results in `folderpath/filename.snapshot.meta`. |
+|<a name="local-snapshots-base-path"></a>`ZMQ-ENABLED`  |  Enable [zero message queue](../concepts/zero-message-queue.md) subscriptions |  boolean |  false   |  |
+
