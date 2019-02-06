@@ -2,7 +2,7 @@
 
 ## I cannot connect to my node via SSH
 
-This can be caused by a lot reasons. You should check the following list:
+This can be caused by a lot of reasons. You should check the following list:
 - Are you sure that the IP address is right? 
 If not, check it again and use another way to find the IP address of your device.
 - Was the flash process successful? 
@@ -14,10 +14,10 @@ If not possible, use an USB-to-UART adapter to connect to your SBC.
 Some devices require an additional setup or activation of SSH. 
 You should take a look into the documentation of your device or ask in a forum.
 
-## I am getting weird character with my USB-to-UART adapter
+## I am getting non ascii character with my USB-to-UART adapter
 
 - Can you successfully login to your device and just some characters are weird? 
-If you can read the bootup messages and just some characters are weird, this is not abnormal. 
+If you can read the messages while system boot and just some characters are weird, this is not abnormal. 
 Just continue using it. You should switch to an SSH terminal as fast as possible 
 due to some problems with the serial terminal.
 - Have you checked your baud rate? 
