@@ -1,15 +1,17 @@
-# Setup a SBC (Single-board computer) for IOTA
+# Setting up a SBC (Single-board computer) for IOTA
 
 *Before you start using this guide:*
-The preferred and simplest solution is to connect your device via HDMI/VGA to a display & plugin a keyboard via USB.
-If you are able to connect your device via Ethernet to your router, you should do that.
-If non of these options are available, you can use a USB-to-UART adapter. (Wi-Fi only device)
-The [CP2102](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) 
-is a well-known and highly available chip.
-Ready to use USB-to-UART adapters are available for around 1-$2.
-Some devices already have an integrated adapter.
-If you are not sure if your device has such an interface, take a look into the documentation of your device.
-A Forum might be also a good source to get this information.
+
+- The preferred and simplest solution is to connect your device via HDMI/VGA to a display & plugin a keyboard via USB.
+
+- If you are able to connect your device via Ethernet to your router, you should do that.
+
+- Worst case scenario: Use a USB-to-UART adapter. (Wi-Fi only device)
+
+*_Note:_* The [CP2102](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) 
+is a well-known and highly available chip. Ready to use USB-to-UART adapters are available for around 1-$2.
+Your device might have an integrated adapter. Take a look into the documentation of your device.
+
 
 ## 1. Install/Flash an Operation System to a SD-Card.
 
