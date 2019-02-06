@@ -1,4 +1,4 @@
-# Setting up a SBC (Single-board computer) for IOTA
+# Setting up an SBC (Single-board computer) for IOTA
 
 *Before you start using this guide:*
 
