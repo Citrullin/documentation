@@ -12,7 +12,7 @@ want to use IRI instead. IRI requires 4 GB of memory, so you only have a few SBC
 
 *_Note:_* I use an Orange Pi Zero & Zero Plus for this guide, but I try to keep it as general as possible.
 So, it should be possible to follow it with any common ARM based SBC.
-I cover ARMv7 & ARMv8A (32-Bit & 64-Bit). So you should be able to run this guide on any Cortex-A platform.
+I cover ARMv7 & Aarch64 (32-Bit & 64-Bit). So you should be able to run this guide on any Cortex-A platform.
 
 Host system requirements:
 
@@ -49,9 +49,45 @@ Follow the [installation guide](https://docs.bazel.build/versions/master/install
 
 ## Cross compile cIRI
 
-### ARMv8 (64-Bit)
+### Aarch64 (64-Bit)
 
 ```bash
 cd ent
 bazel build -c opt --define network=mainnet --define trit_encoding=5 --crosstool_top=@iota_toolchains//tools/aarch64--glibc--bleeding-edge-2018.07-1:toolchain --cpu=aarch64 --compiler='gcc' --host_crosstool_top=@bazel_tools//tools/cpp:toolchain //ciri
+```
+
+### ARMv7 (32-Bit)
+
+```bash
+bazel build -c opt --define network=mainnet --define trit_encoding=5 --crosstool_top=@iota_toolchains//tools/armv7-eabihf--glibc--bleeding-edge-2018.07-1:toolchain --cpu='armeabi-v7a' --compiler='gcc' --host_crosstool_top=@bazel_tools//tools/cpp:toolchain //ciri
+```
+
+## Copy the files to your device
+
+### ARMv7
+```bash
+ssh USERNAME@IP_ADDRESS "sudo - su && mkdir -p /etc/iota/ciri"
+scp -r bazel-out/armeabi-v7a-opt/bin/ciri/ USERNAME@IP_ADDRESS:/etc/iota/ciri/
+```
+
+### Aarch64
+```bash
+
+```
+
+## SSH to your device
+```bash
+ssh USERNAME@IP_ADDRESS
+```
+
+## Create snapshot & config directories
+
+```bash
+sudo - su && \
+cd /etc/iota/ciri && \
+mkdir -p external/snapshot_conf_mainnet/file/ && \
+mkdir -p external/snapshot_sig_mainnet/file/ && \
+mkdir -p external/snapshot_mainnet/file/ && \
+mv ciri app && \
+mkdir -p ciri
 ```
