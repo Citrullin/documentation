@@ -62,7 +62,7 @@ to flash an OS to the SD Card.
 		
 #### 3.1.2. Get the IP address (Skip if your SBC does not have Ethernet or if it is not connected)
 
-Execute the command ```ifconfig```. The program returns all network interfaces and the given IP addresses.
+Execute the command ```ip addr show```. The program returns all network interfaces and the given IP addresses.
 The interfaces starting with eth are Ethernet network interfaces. 
 The ones starting with wl are the Wi-Fi network interfaces.
 
@@ -70,7 +70,7 @@ The ones starting with wl are the Wi-Fi network interfaces.
 
 If you want to use Wi-Fi or your SBC has only Wi-Fi, continue with 3.4. 
 After configuring the Wi-Fi network interface you are able
-to get your IP address with ```ifconfig```.
+to get your IP address with ```ip addr show```.
 
 
 ### 3.2 Find your SBCs IP address via network-scans (IPv4 only, Ethernet connected)
@@ -114,7 +114,7 @@ You must execute these commands on your host-system.
 
 #### 3.3.1. Install PlatformIO
 You need additional software to connect to the serial port. 
-We recommend [PlatformIO](https://docs.platformio.org/en/latest/userguide/cmd_device.html?highlight=monitor#platformio-device-monitor).
+We recommend [PlatformIO](https://docs.platformio.org/en/latest/installation.html).
 PlatformIO provides a simple command tool to interact with your SBC.
 
 #### 3.3.2. Plugin your USB-to-UART adapter
@@ -134,7 +134,7 @@ Some adapters have an unexpected behavior with their access rights. Just in case
 
 Take a look into the documentation of your SBC to find the baud rate. In case of the Orange Pi Zero it is 115200.
 ```bash
-platformio SBC monitor -b BAUD_RATE -p /dev/ttyUSBX
+platformio device monitor -b BAUD_RATE -p /dev/ttyUSBX
 ```
 
 #### 3.3.6. Power up your SBC or restart your SBC 
@@ -156,7 +156,9 @@ Check if your SBC is connected to the Internet
 ping iota.org
 ```
 
-You can now get your IP address with  ```ifconfig```.
+Press CTRL + Z to stop the ping.
+
+You can now get your IP address with  ```ip addr show```.
 
 ### 3.5. Connect via SSH to your SBC
 
@@ -194,3 +196,18 @@ If you found more than one IP address, you should every IP address, until you fi
 If you are able to login with the your username & password, this is probably your SBC.
 If you want to make sure if this your SBC, just check it with ```cat /proc/cpuinfo```. 
 	
+### 3.6. Generate an SSH key
+
+_*Note*_: You need to do this on your host system.
+[Github has a good article](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) for every operation system. Just follow the guide.
+
+### 3.7. Add the public key to the authorized keys
+
+_*Note:*_ If you used another name for your key, you need to replace id_rsa with the name of your key.
+
+If you add your key to authorized keys, you do not need to type your password all the time.
+SSH is looking for your saved keys and authorizes with the saved private key.
+
+```bash
+cat .ssh/id_rsa.pub | ssh USERNAME@IP_ADDRESS "mkdir -p .ssh && cat >> .ssh/authorized_keys"
+```
