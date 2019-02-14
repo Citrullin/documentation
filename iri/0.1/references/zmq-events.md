@@ -13,7 +13,7 @@ Index 0 of each array of returned data is not displayed because it is always the
 |  **Event/Description** | **Returned data**
 | :----------| :----------|
 |`mctn`|
-|Number of transactions traversed during tip selection| <ul><li>Index 1: Total number of transactions that were traversed during tip selection</li><li>Index 2: Transaction hash</li></ul></ul>
+|Number of transactions traversed during tip selection| <ul><li>Index 1: Total number of transactions that were traversed during tip selection</li></ul></ul>
 |`dnscv` |
 |Neighbor DNS validations| <ul><li>Index 1: Neighbor's hostname</li><li>Index 2: Neighbor's IP address</li></ul>
 |`dnscc`|
@@ -39,7 +39,7 @@ Index 0 of each array of returned data is not displayed because it is always the
 |`sn`|
 | Transaction in the ledger that the IRI has recently confirmed| <ul><li>Index 1: Transaction hash</li><li>Index 2: Address</li><li>Index 3: Trunk transaction hash</li><li>Index 4: Branch transaction hash</li><li>Index 5: Bundle hash</li></ul>
 |`tx_trytes`|
-| Raw transaction trytes that has recently appended to the ledger| <ul><li>Index 1: [Raw transaction object](root://iota-basics/0.1/references/structure-of-a-transaction)</li></ul>
+| Raw transaction trytes that has recently appended to the ledger| <ul><li>Index 1: [Raw transaction object](root://iota-basics/0.1/references/structure-of-a-transaction)</li><li>Index 2: Transaction hash</li></ul>
 |`tx` |
 |Transactions that the IRI has recently appended to the ledger| **Array 0**<ul><li>Index 1: Transaction hash</li><li>Index 2: Address</li><li>Index 3: Amount of IOTA</li><li>Index 4: Obsolete tag</li><li>Index 5: Timestamp of the bundle creation (seconds since the last snapshot)</li><li>Index 6: Index of the transaction in the bundle</li><li>Index 7: Last transaction index of the bundle</li><li>Index 8: Bundle hash</li><li>Index 9: Trunk transaction hash</li><li>Index 10: Branch transaction hash</li><li>Index 11: Timestamp of the attachment to the Tangle (milliseconds since the last snapshot)</li><li>Index 12: Tag</li></ul>**Array 1**<ul><li>Index 0: "tx_trytes"</li><li>Index 1: Transaction signature</li></ul>
 |81 character address or 90 character address with checksum| 
