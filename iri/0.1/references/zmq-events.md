@@ -13,7 +13,7 @@ Index 0 of each array of returned data is not displayed because it is always the
 |  **Event/Description** | **Returned data**
 | :----------| :----------|
 |`mctn`|
-|Number of transactions traversed during tip selection| <ul><li>Index 1: Total number of transactions that were traversed during tip selection</li></ul></ul>
+|Number of transactions traversed during tip selection| <ul><li>Index 1: Total number of transactions that were traversed during tip selection</li></ul>
 |`dnscv` |
 |Neighbor DNS validations| <ul><li>Index 1: Neighbor's hostname</li><li>Index 2: Neighbor's IP address</li></ul>
 |`dnscc`|
