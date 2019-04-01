@@ -1,7 +1,78 @@
-# IPv6 mesh network
-**This document contains some definitions about IoT 6LoWPAN mesh networks**
+# 6LoWPAN mesh network
+
+**This document contains some definitions and naming conventions of IoT 6LoWPAN mesh networks**
+
+## Network stack
+
+### IPv6 over Bluetooth Low Energy
+
+![IPv6 over Bluetooth Low Energy network stack](../ipv6onnrf51.png)
+
+### 6LoWPAN
+
+![6LoWPAN network stack](../6LoWPAN.png)
+
+## Network topology
+
+The network topology of a 6LoWPAN network is really flexible. There are two types of network topologies used in 6LoWPAN.
+
+### Star
+
+The star topology is the simplest form of network topology. 
+Routing is not needed, because all devices are directly communicating with the border router.
+There is little routing involved when devices want to communicate with each other. 
+The border router just acts as switch in this network topology.
+
+![Star network topology](../star_topology.png)
+
+### Mesh tree
+
+There are a lot of different type of meshing topologies. 
+6LoWPAN uses a mesh tree in order to use a simple routing algorithm.
+The biggest problem in huge mesh networks is the routing. 
+As more complex the mesh topology is, the more complex the routing becomes. 
+
+![Mesh tree network topology](../mesh.png)
+
+## Routing
+
+There are two types of routing protocols. Mesh-under and route-over.
+
+## Mesh-under
+
+Mesh-under describes a type of routing protocol which uses the Layer 2 (Mac Layer) for its routing. It is therefore similar to
+Ethernet. Mesh-under broadcasts the packets in the network. Mesh-under produces more load on the network than route-over.
+Mesh-under protocols should only be used for smaller networks. 
+Mesh-under has typically a lower latency than route-over.
+Mesh-under routing has a disadvantage in scalability.
+
+## Route-over
+
+Route-over is a type of routing protocol which uses the Layer 3 (IP Layer) for its routing. 
+Packets are not broadcasted. They are only send to the node in the radio range. 
+Route-over requires knowledge about the neighbors. For example Neighbor Discovery can be used for it.
+Due to the multicast packets, Route-over is giving the Neighbor Discovery protocol a disadvantage.
+Route-over routing has a advantage in scalability.
+
+
 
 ## Naming convention
+
+### LLN
+
+LLN stands for Low power and Lossy Networks. 
+It describes a type of network where some devices might be not be available all the time. 
+For example when a device only wakes up in a certain interval.
+It also describes a network where a packet might get lost, due to unreliable devices.
+The range of the radio can also play a role in it. 
+
+### Host
+
+Host describes a device which is not a router. In a mesh tree the host is a leaf node.
+
+### Node
+
+Node refers to any device in our network structure. This can either be a Host of a router.
 
 ### IEEE 802.15.4
 
@@ -32,19 +103,23 @@ The standard utilizes the
 [IPSP characteristics](https://www.bluetooth.org/docman/handlers/DownloadDoc.ashx?doc_id=296307) in Bluetooth >= 4.1.
 The complete IP standard on Bluetooth is defined in the [Bluetooth 4.2 specification](https://www.bluetooth.org/DocMan/handlers/DownloadDoc.ashx?doc_id=286439).
 
-### RPL
+### RPL (IPv6 Routing Protocol for Low-Power and Lossy Networks)
 
 RPL is a routing protocol used for 6LoWPAN. 
 The standard is defined in [RFC 6550](https://datatracker.ietf.org/doc/rfc6550/).
+[This video series](https://www.youtube.com/watch?v=6AP7p0sbBro&t=45s) is a good resource to get into details how it works.
 
-### Border Router
+### 6LBR (6LoWPAN Border Router)
 
 Border router are connecting the 6LoWPAN with an IPv6 network. To keep it simple:
 The Border router connects our IoT mesh network to the Internet. 
 The Border router is not necessarily connecting the mesh 6LoWPAN directly to the Internet.
 The router can also be connected to a private or public Wifi.
+Some resources refer it as edge router.
 
-## Network stack
+### 6LR (6LoWPAN Router)
 
-### IPv6 over Bluetooth Low Energy
+A 6LR routes the packets to hosts or other 6LR nodes. The only difference between a 6LBR and a 6LR is the connection to
+the Internet.
+
 
