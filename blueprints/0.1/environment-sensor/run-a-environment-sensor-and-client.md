@@ -4,8 +4,8 @@ The sensor gets an individual IPv6 address. Therefore, we can send UDP/IP packet
 
 ## Prerequisites
 
-- [Configured 6LoWPAN network](set-up-a-bluetooth-star-network.md)
-- [Installed nRF toolchain](root://iot/0.1/how-to-guides/set-up-nrf-toolchain.md)
+- [Configured 6LoWPAN network](../../../general/0.1/how-to-guides/set-up-a-bluetooth-star-network.md)
+- [Installed nRF toolchain](../../../general/0.1/how-to-guides/set-up-nrf-toolchain.md)
 - [Installed Golang](https://golang.org/doc/install)
 - DHT11- or DHT22-sensor
 - nRF52832

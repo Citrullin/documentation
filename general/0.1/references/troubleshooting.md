@@ -39,3 +39,13 @@ It might be the case that your device is not configured correctly. Just try comm
 - Are you using a standard USB charger or the USB-port of a PC to power up your device?
 You might want to try a more powerful power supply. Usually the powerful ones have a fixed Micro-USB cable.
 Make sure to buy one with at least 2A. Better: 3A.
+
+## Set up a IPv6 over Bluetooth Low Energy border router
+
+### none already mounted or mount point busy.
+
+When you get this response
+```bash
+mount: /sys/kernel/debug: none already mounted or mount point busy.
+```
+just continue with the guide. The file system is probably already mounted.
