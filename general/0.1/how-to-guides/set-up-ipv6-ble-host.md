@@ -2,10 +2,11 @@
 
 ## Prerequisites
 
-::info
+:::info:
 Due to a bug in RIOT OS, the nRF52823 is only supported at the moment. An implementation for state-of-the-art hardware,
 such as the nRF52840 is in progress. We will update the documentation when this implementation is ready to use.
-::
+:::
+
 - nRF52823
 - Installed [nRF toolchain](set-up-nrf-toolchain.md)
 - Connected [serial console and J-Link](connect-nrf-jlink-serial-console.md)
@@ -13,9 +14,9 @@ such as the nRF52840 is in progress. We will update the documentation when this 
 
 1. Clone the forked RIOT OS repository
 
-    ::info
+    :::info:
     We forked the RIOT OS repository and added some packages and examples which are currently not in the mainline kernel.
-    ::
+    :::
     Clone the forked RIOT OS repository on your host-system. 
     ```bash
     git clone https://github.com/iota-community/BLE-environment-sensor.git
@@ -23,12 +24,12 @@ such as the nRF52840 is in progress. We will update the documentation when this 
 
 2. Flash the IPv6 Bluetooth example
 
-    ::info
+    :::info:
     It is not necessary to use the server application. You can also use another one. 
     It is only necessary to include the network layer in order to to be able to connect to the device.
     All examples with gnrc_ should also work and provide all network functionality. 
     You might want to try out the gnrc_minimal example in order to abe to ping the device.
-    ::
+    :::
 
     Go to the example directory
     ```bash

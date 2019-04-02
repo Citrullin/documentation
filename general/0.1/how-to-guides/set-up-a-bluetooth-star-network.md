@@ -28,7 +28,7 @@ Before we get deeper into the topic, you should first read the [IPv6 mesh networ
 
 2. Connect your BLE host to your BLE border router
 
-    :::info
+    :::info:
     You can connect multiple devices to your border router.
     :::
     

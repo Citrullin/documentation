@@ -17,11 +17,11 @@ The J-Link uses a standard 20 PIN JTAG.
 ![J-Link JTAG 20 pin](../jtag_20pin.png)
 
 ## nRF5x pinout
-::info
+:::info:
 The cheap breakout board can be bought for ~2-3USD from China.
 Just search for "nrf52832 Minimum Test Board" or "nrf51822 Minimum Test Board" 
 This breakout board is compatible with the nrf51822 and nrf52832.
-::
+:::
 
 This depends on the development board you use.
 
@@ -38,9 +38,9 @@ These pins are used to connect our UART-to-USB dongle.
 
 ![USB-to-UART pinout](../usb-to-uart.png)
 
-::info
+:::info:
 You should use a black cable for GND and a red one for VCC
-::
+:::
 
 1. Connect the J-Link to your development board
 -

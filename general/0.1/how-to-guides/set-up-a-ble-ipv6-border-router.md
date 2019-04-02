@@ -8,7 +8,7 @@ This makes it possible to use an UDP/IP (IPv6) stack on IoT BLE devices**
 - Bluetooth <= 4.0 (USB dongle or integrated)
 
 ## Install an older Linux kernel
-:::info
+:::info:
 Due to [a bug](https://github.com/RIOT-OS/RIOT/issues/11147), you need to use an older Linux kernel.
 :::
 
@@ -26,10 +26,10 @@ Due to [a bug](https://github.com/RIOT-OS/RIOT/issues/11147), you need to use an
 
 ## Installation
 
-::info
+:::info:
 You need to do this every session. So, if you close your session,
 for example after a reboot, you have to do this again.
-::
+:::
 
 1. Install bluez
     ```bash
