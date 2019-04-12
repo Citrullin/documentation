@@ -3,9 +3,15 @@
 *In order to be able to flash your nRF5x microcontroller, you need to wire your J-Link to your nRF MCU.
 This guide describes how you can do this.*
 
+:::info:
+If you want to have cheap option to flash a nRF5x microcontroller, you should consider buying a
+J-Link OB clone. Some development boards have an integrated J-Link. 
+If your board has an integrated one, you should use it. Check the documentation of your development board first.
+:::
+
 ## Prerequisites
 
-- Segger J-Link (alternative: an J-Link compatible clone or DIY build)
+- External or integrated Segger J-Link
 - nRF5x with development board
 - DuPont Cables to connect the J-Link to your microcontroller
 - UART-to-USB dongle
@@ -15,6 +21,14 @@ This guide describes how you can do this.*
 
 The J-Link uses a standard 20 PIN JTAG.
 ![J-Link JTAG 20 pin](../jtag_20pin.png)
+
+![J-Link JTAG](../j-link.png)
+
+## J-Link OB clone pinout
+
+![J-Link OB pinout](../j-link-ob-pinout.png)
+
+![J-Link OB](../j-link-ob.png)
 
 ## nRF5x pinout
 :::info:
@@ -42,9 +56,8 @@ These pins are used to connect our UART-to-USB dongle.
 You should use a black cable for GND and a red one for VCC
 :::
 
-1. Connect the J-Link to your development board
--
-    Connect VCC, GND and SCLK to your J-Link
+1. Connect the Programmer to your development board
+- Option 1: J-Link
     
     |    nRF5x    |    J-Link (pin)   |
     |-------------|-------------------|
@@ -52,6 +65,16 @@ You should use a black cable for GND and a red one for VCC
     |    GND      |    GND (4)        |
     |    SWD      |    SWDIO (7)      |
     |    SCLK     |    SWDCLK (9)     |
+
+- Option 2: J-Link OB
+
+    |    nRF5x    |    J-Link OB   |
+    |-------------|----------------|
+    |    VCC      |    VCC         |
+    |    GND      |    GND         |
+    |    SWD      |    SWDIO       |
+    |    SCLK     |    SWDCLK      |
+
     
 2. Connect the UART-to-USB dongle to your microcontroller
 
