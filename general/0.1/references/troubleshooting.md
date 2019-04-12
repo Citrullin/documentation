@@ -49,3 +49,43 @@ When you get this response
 mount: /sys/kernel/debug: none already mounted or mount point busy.
 ```
 just continue with the guide. The file system is probably already mounted.
+
+## Flash a nRF5x microcontroller
+
+###  recipe for target 'flash' failed
+
+When you use a J-Link OB clone for the first time the flashing might fail. 
+Don't be surprised to receive a message like this
+
+```bash
+recipe for target 'flash' failed
+make: *** [flash] Error 1
+```
+
+If the J-Link OB clone was upgraded before, everything works fine. After the upgrade, you can execute the flash
+command a second time and the flashing works like expected. The upgrade which leads to the temporary error looks
+like this:
+
+```bash
+### Flashing Target ###
+### Flashing at base address 0x0 with offset 0 ###
+SEGGER J-Link Commander V6.44 (Compiled Mar  1 2019 17:36:52)
+DLL version V6.44, compiled Mar  1 2019 17:36:42
+
+J-Link Commander will now exit on Error
+
+J-Link Command File read successfully.
+Processing script file...
+
+J-Link connection not established yet but required for command.
+Connecting to J-Link via USB...Updating firmware:  J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+Replacing firmware: J-Link ARM-OB STM32 compiled Jun 30 2009 11:14:15
+  ... Firmware update successful. CRC=BEA0
+Waiting for new firmware to boot
+FAILED: Communication timed out: Requested 2 bytes, received 0 bytes !
+EMU_GetFirmwareString: Insufficient data read when trying to read the string length.
+
+Script processing completed.
+
+```
+
