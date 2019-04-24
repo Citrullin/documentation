@@ -6,11 +6,11 @@
 
 ### IPv6 over Bluetooth Low Energy
 
-![IPv6 over Bluetooth Low Energy network stack](../ipv6onnrf51.png)
+![IPv6 over Bluetooth Low Energy network stack](../images/ipv6onnrf51.png)
 
 ### 6LoWPAN
 
-![6LoWPAN network stack](../6LoWPAN.png)
+![6LoWPAN network stack](../images/6LoWPAN.png)
 
 ## Network topology
 
@@ -23,7 +23,7 @@ Routing is not needed, because all devices are directly communicating with the b
 There is little routing involved when devices want to communicate with each other. 
 The border router just acts as switch in this network topology.
 
-![Star network topology](../star_topology.png)
+![Star network topology](../images/star_topology.png)
 
 ### Mesh tree
 
@@ -32,7 +32,7 @@ There are a lot of different type of meshing topologies.
 The biggest problem in huge mesh networks is the routing. 
 As more complex the mesh topology is, the more complex the routing becomes. 
 
-![Mesh tree network topology](../mesh.png)
+![Mesh tree network topology](../images/mesh.png)
 
 ## Routing
 

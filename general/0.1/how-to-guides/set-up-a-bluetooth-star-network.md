@@ -7,7 +7,8 @@ Before we get deeper into the topic, you should first read the [IPv6 mesh networ
 
 ## Prerequisites
 
-- Linux based host-system (your J-Link and UART-to-USB needs to be connected to this machine)
+- Linux based host-system 
+([your J-Link and UART-to-USB need to be connected to this machine](connect-nrf-jlink-serial-console.md))
 - Installed [nRF toolchain](set-up-nrf-toolchain.md)
 - Configured [BLE Border router](set-up-a-ble-ipv6-border-router.md)
 - Configured and flashed [IPv6 BLE host(s)](set-up-ipv6-ble-host.md) node

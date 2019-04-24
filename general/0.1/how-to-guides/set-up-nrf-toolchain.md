@@ -1,4 +1,6 @@
 # Set up nordic nRF toolchain
+**In this, we are going to set up the Nordic nRF toolchain, 
+in order to be able to program and flash our Microcontroller**
 
 ## Prerequisites
 

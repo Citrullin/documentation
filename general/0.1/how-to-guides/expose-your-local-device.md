@@ -76,11 +76,11 @@ To allow external devices to connect to your device through the Internet, your r
 
 1. [Create a Duck DNS account](https://www.duckdns.org/) and add a subdomain
 
-    ![Duck DNS sub domain](../duckdns-subdomain.png)
+    ![Duck DNS sub domain](../images/duckdns-subdomain.png)
 
 2. [Install the scripts](https://www.duckdns.org/install.jsp) that will send your IP address to Duck DNS at regular intervals. Make sure you select the correct operating system for your device and select your subdomain from the dropdown. Then, follow the instructions.
 
-    ![Duck DNS installation](../duckdns-install.png)
+    ![Duck DNS installation](../images/duckdns-install.png)
 
 Now that your router has a static IP address, you can create port forwarding rules to forward connections to your device.
 
@@ -108,11 +108,11 @@ All routers are different. In this guide, the router is a BT Hub 6, as a result 
 
 2. Go to **Advanced settings**
 
-    ![Advanced settings for a BT Hub 6 router](../router-bt-hub.png)
+    ![Advanced settings for a BT Hub 6 router](../images/router-bt-hub.png)
 
 3. Click **Firewall**
 
-    ![Firewall settings for a BT Hub 6 router](../router-advanced-settings.png)
+    ![Firewall settings for a BT Hub 6 router](../images/router-advanced-settings.png)
 
 4. Create a new rule by doing the following:
 
@@ -121,7 +121,7 @@ All routers are different. In this guide, the router is a BT Hub 6, as a result 
     * Enter a port that you want to use to connect to your local device from the Internet
     * Select a protocol that the router should listen to
 
-    ![Example of a port forwarding rule](../port-forwarding-rule.png)
+    ![Example of a port forwarding rule](../images/port-forwarding-rule.png)
 
 5. You may need to restart your router for the rules to take effect
 
