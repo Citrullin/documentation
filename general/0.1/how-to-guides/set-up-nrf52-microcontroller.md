@@ -4,6 +4,7 @@
 ## Prerequisites
 
 - nRF52832 development board
+- Linux based PC
 
 :::info:
 You have a lot of options for your nRF52832 development board.
@@ -15,10 +16,10 @@ To name a few options:
 - chinese nRF52832 module + nrf52832 Minimum Test Board @ ~10 USD
 :::
 
-- J-Link or J-Link OB clone
+- J-Link, J-Link OB clone or DAPLink
 
 :::info
-Some development boards have an integrated J-Link. If you have one of these boards, you don't need an additional
+Some development boards have an integrated J-Link or DAPLink. If you have one of these boards, you don't need an additional
 J-Link. Check the datasheet of your development board before.
 :::
 
@@ -27,7 +28,8 @@ J-Link. Check the datasheet of your development board before.
 1. Optional: Solder JTAG pins and GPIO pins
 
     :::info:
-    Soldering the pins on some boards is quite hard. You should consider this, before you buy a development board.
+    Soldering the pins on some boards is quite hard. You should keep this in mind before you buy a development board.
+    Check that the development baord does not have half pin holes.
     :::
 
     This is not needed for every development board. Your board might has all necessary pins already soldered.
@@ -39,10 +41,11 @@ J-Link. Check the datasheet of your development board before.
     **chinese nRF52832 module + nrf52832 Minimum Test Board**
     ![chinese nRF52832 minimum test board soldered](../images/nrf52_cheap_board.png)
     
-2. [Connect your J-Link and USB-to-UART adapter](connect-nrf-jlink-serial-console.md)
+2. [Connect your J-Link/DAPLink and USB-to-UART adapter](connect-nrf-jlink-serial-console.md)
 
     :::info
-    If your board has an integrated J-Link, you don't need to connect the J-Link
+    If your board has an integrated J-Link/DAPLink, you don't need to connect the J-Link to your board. 
+    The J-Link/DAPLink already exposes an USB-Port. Check the datasheet of your board before.
     :::
 
 

@@ -4,7 +4,7 @@
 ## Prerequisites
 
 - nRF52 microcontroller
-- I2C sensor
+- I2C sensor development board
 
 :::info
 We use RIOT OS in our examples. If you consider yourself as beginner, 

@@ -1,5 +1,5 @@
 # Create a low budget sensor node like the Bosch XDK
-**In thise guide, we are going to create a low budget sensor node which has similar features as the Bosch XDK**
+**In this guide, we are going to create a low budget sensor node which has similar features as the Bosch XDK**
 
 ## Prerequisites
 

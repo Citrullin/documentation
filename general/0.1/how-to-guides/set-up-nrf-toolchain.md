@@ -4,7 +4,10 @@ in order to be able to program and flash our Microcontroller**
 
 ## Prerequisites
 
-- Ubuntu (or other Linux distro) on your host-system
+- Linux based PC
+:::info:
+Your microcontroller needs to be connected to this PC.
+:::
 
 1. Install git
 
@@ -14,9 +17,16 @@ in order to be able to program and flash our Microcontroller**
 
     [Follow this guide on gnu mcu eclipse](https://gnu-mcu-eclipse.github.io/toolchain/arm/install/#gnulinux-1)
 
-3. Install JEGGER JLink 
+3. Install the programmer tools
+ 
+   Option 1: J-Link or J-Link OB
 
-    [Follow this guide on gnu mcu eclipse](https://gnu-mcu-eclipse.github.io/debug/jlink/install/)
+   [Follow this guide on gnu mcu eclipse](https://gnu-mcu-eclipse.github.io/debug/jlink/install/)
+    
+   Option 2: DAPLink
+   
+   Execute the following command:
+   ```pip install pyocd --user -U```
 
 4. Install OpenOCD
 

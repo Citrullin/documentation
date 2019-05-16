@@ -4,10 +4,12 @@ This makes it possible to use an UDP/IP (IPv6) stack on IoT BLE devices**
 
 ## Prerequisites
 
+- SBC or PC (The machine acts as the border router)
 - Ubuntu (or another linux distro, if you are familiar with it)
 - Bluetooth <= 4.0 (USB dongle or integrated)
-
+b
 ## Install an older Linux kernel
+
 :::info:
 Due to [a bug](https://github.com/RIOT-OS/RIOT/issues/11147), you need to use an older Linux kernel.
 :::
@@ -52,7 +54,7 @@ for example after a reboot, you have to do this again.
     mount -t debugfs none /sys/kernel/debug
     ```
 
-4. Load Bluetooth 6LoWPAN Linux module
+4. Load the Bluetooth 6LoWPAN Linux module
 
     ```bash
     modprobe bluetooth_6lowpan
@@ -70,7 +72,7 @@ for example after a reboot, you have to do this again.
     hciconfig
     ```
 
-7. Reset your device
+7. Reset the device you want to use
 
     YOUR_DEVICE_ID => e.g. hci0
     ```bash

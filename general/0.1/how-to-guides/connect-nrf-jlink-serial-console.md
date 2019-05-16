@@ -1,4 +1,4 @@
-# Connect a J-Link and serial console to your nRF5x microcontroller
+# Connect a J-Link/DAPLink and serial console to your nRF5x microcontroller
 
 *In order to be able to flash your nRF5x microcontroller, you need to wire your J-Link to your nRF MCU.
 This guide describes how you can do this.*
@@ -11,11 +11,12 @@ If your board has an integrated one, you should use it. Check the documentation 
 
 ## Prerequisites
 
-- External or integrated Segger J-Link
+- Linux based PC
+- External or integrated Segger J-Link/DAPLink
 - nRF5x with development board
-- DuPont Cables to connect the J-Link to your microcontroller
-- UART-to-USB dongle
-- DuPont Cables to connect the UART-to-USB dongle to your microcontroller
+- If necessary: DuPont Cables to connect the J-Link/DAPLink to your microcontroller
+- Internal or external UART-to-USB
+- If necessary: DuPont Cables to connect the UART-to-USB dongle to your microcontroller
 
 ## J-Link pinout
 
@@ -74,9 +75,17 @@ You should use a black cable for GND and a red one for VCC
         |    GND      |    GND         |
         |    SWD      |    SWDIO       |
         |    SCLK     |    SWDCLK      |
-
+        
+    - Option 3: DAPLink
     
-2. Connect the UART-to-USB dongle to your microcontroller
+    Most DAPLink controller are integrated on the development board and expose an USB-Port.
+    Therefore, you only need to connect the the microcontroller board to your PC with the correct USB-cable.
+    
+2. Connect the Programmer to your PC
+
+If you use a J-Link or J-Link OB, you need to connect it via an USB-cable to your PC.
+    
+3. Connect the UART-to-USB dongle to your microcontroller
 
     Connect P0.6 and P0.8.
     
@@ -86,3 +95,5 @@ You should use a black cable for GND and a red one for VCC
     |    RX (P0.8)     |    TX            |
     |    VCC           |    VCC           |
     |    GND           |    GND           |
+
+4. Connect the UART-to-USB dongle to your PC
