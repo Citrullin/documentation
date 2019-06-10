@@ -14,7 +14,9 @@ You're at an online checkout and the total to pay is 10Mi. Your seed has 2 addre
 
 For the vendor to receive 10Mi, all three of those transactions must be valid. They're sequential instructions that rely on each other's validity to achieve the overall goal of transferring IOTA tokens.
 
-**Note:** It's not just multiple transactions that need to be packaged in a bundle, even individual ones do.
+:::info:
+It's not just multiple transactions that need to be packaged in a bundle, even individual ones do.
+:::
 
 ## Withdrawals and deposits
 
@@ -26,7 +28,9 @@ Input transactions withdraw IOTA tokens from addresses.
 
 Bundles can contain multiple input transactions, and each one must include a valid signature. The length of the signature depends on the [security level](../references/security-levels.md) of the address. If the security level of the address is greater than 1, the signature is too large to fit in one transaction and must be fragmented across zero-value output transactions.
 
-**Important:** [Addresses must not be withdrawn from more than once](../concepts/addresses-and-signatures.md#address-reuse). Therefore, input transactions must withdraw all IOTA tokens from an address even if the sender does not want to transfer all of them to the recipient. The remaining IOTA tokens can be deposited into a remainder address (usually the sender's address) in an output transaction.
+:::danger:
+[Addresses must not be withdrawn from more than once](../concepts/addresses-and-signatures.md#address-reuse). Therefore, input transactions must withdraw all IOTA tokens from an address even if the sender does not want to transfer all of them to the recipient. The remaining IOTA tokens can be deposited into a remainder address (usually the sender's address) in an output transaction.
+:::
 
 ### Output transaction
 
@@ -37,7 +41,9 @@ Output transactions can be one of the following:
 
 Bundles can contain multiple output transactions. If a message in an output transaction is larger than the `signatureMessageFragment` field, the message can be fragmented across other zero-value output transactions.
 
-**Note:** Transactions that deposit IOTA tokens can also contain a message because they don't withdraw IOTA tokens, and therefore don't contain a signature.
+:::info:
+Transactions that deposit IOTA tokens can also contain a message because they don't withdraw IOTA tokens, and therefore don't contain a signature.
+:::
 
 ## How bundles are validated
 
@@ -45,7 +51,7 @@ After you send a bundle to a [node](root://iri/0.1/introduction/overview.md), it
 
 During [tip selection](root://the-tangle/0.1/concepts/tip-selection.md), a node finds and [validates each transaction in your bundle](root://iri/0.1/concepts/transaction-validation.md#bundle-validator) by traversing its `trunkTransaction` field. When the node has validated all transactions up to the head (or [`lastIndex` field](../references/structure-of-a-transaction.md)), your bundle is considered valid.
 
-![Example of a bundle of 4 transactions](../bundle.png)
+![Example of a bundle of 4 transactions](../images/bundle.png)
 
 ## Example bundles
 

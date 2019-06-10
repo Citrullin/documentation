@@ -1,33 +1,51 @@
 # IOTA networks
 
-**An IOTA network consists of nodes that are mutually connected to neighbors.**
+**In IOTA, bundles of transactions must be sent to [nodes](../introduction/what-is-a-node.md). IOTA has three [public networks](../references/iota-networks.md) of nodes. Each network has its own unique distributed ledger (the Tangle) that the nodes can append transactions to. You can choose to connect and send bundles to nodes on any public network.**
 
-IOTA has the following [permissionless networks](../introduction/what-is-dlt.md) that anyone can use:
+IOTA has the following [permissionless (public) networks](../introduction/what-is-dlt.md):
 * **Mainnet:** IOTA token
 * **Devnet:** Devnet token (free)
 * **Spamnet:** Spamnet token (free)
 
-All permissionless networks consist of IRI nodes, clients, and the Coordinator.
+All permissionless networks consist of nodes, clients, and the Coordinator.
 
-If you want to create and test an application on a permissioned (private) network, you can do so by running an instance of the open-source Coordinator called [Compass](root://compass/0.1/introduction/overview.md).
+:::info:
+If you want to create and test an application on a permissioned (private) network, you can do so by running an instance of the open-source Coordinator code called [Compass](root://compass/0.1/introduction/overview.md).
+:::
 
 ## Mainnet
 
-When you buy IOTA tokens from a cryptocurrency exchange, you can send those token to addresses on the Mainnet.
+When you buy IOTA tokens from a cryptocurrency exchange, those tokens are valid on the Mainnet.
 
-Transactions on the Mainnet must use a MWM (minimum weight magnitude) of 14 to be valid.
+:::info:
+Cryptocurrency exchanges sell IOTA tokens in denominations of Mega IOTA (1,000,000), which is also written as MIOTA or Mi.
 
-![Mainnet configuration](../mainnet-configuration.png)
+Learn more about [units of IOTA tokens](root://iota-basics/0.1/references/units-of-iota-tokens.md).
+:::
+
+![Mainnet configuration](../images/mainnet-configuration.png)
+
+### Minimum weight magnitude
+
+Transactions on the Mainnet must use a [minimum weight magnitude](root://iota-basics/0.1/concepts/minimum-weight-magnitude.md) (MWM) of 14 to be valid.
 
 ## Devnet
 
-The Devnet is a copy of the Mainnet.
+The Devnet is similar to the Mainnet, except the tokens are free.
 
-On this network, you can test your applications and build proof of concepts that use [free Devnet tokens](https://faucet.devnet.iota.org). The faucet website will send 1000 Devnet tokens to the specified address.
+On this network, you can test your applications and build proofs of concept that use free Devnet tokens.
 
-Transactions on the Devnet must use a MWM (minimum weight magnitude) of 9 to be valid. Compared to the Mainnet, this MWM vastly reduces the time it takes for the Proof of Work (PoW) to be completed.
+:::info:
+[Receive free Devnet tokens](../tutorials/receive-test-tokens.md)
+:::
 
-![Devnet Configuration](../devnet-configuration.png)
+![Devnet Configuration](../images/devnet-configuration.png)
+
+### Minimum weight magnitude
+
+Transactions on the Devnet must use a [minimum weight magnitude](root://iota-basics/0.1/concepts/minimum-weight-magnitude.md) (MWM) of 9 to be valid.
+
+Compared to the Mainnet, this MWM reduces the time it takes for [proof of work](root://the-tangle/0.1/concepts/proof-of-work.md) (PoW) to be completed. So, it takes less time and computational power to create and send a transaction.
 
 ### IRI nodes
 
@@ -51,7 +69,7 @@ Use the ZMQ node to subscribe to events in an IRI node.
 
 #### PoW node
 
-This endpoint gives you access to an IRI node that can do proof of work.
+This endpoint gives you access to an IRI node that can do remote proof of work.
 
 Use the PoW node to save power on small devices.
 
@@ -59,13 +77,19 @@ Use the PoW node to save power on small devices.
 
 ## Spamnet
 
-The Spamnet is for applications that spam transactions.
+The Spamnet is for applications that send spam transactions.
 
-On this network, you can test your applications and build proof of concepts that use [free Spamnet tokens](https://faucet.spamnet.iota.org).
+On this network, you can test your applications and build proof of concepts that use free Spamnet tokens.
 
-Transactions on the Devnet must use a MWM (minimum weight magnitude) of 7 to be valid. Compared to the Mainnet, this MWM vastly reduces the time it takes for the Proof of Work (PoW) to be completed.
+:::info:Receive free Spamnet tokens
+The [faucet website](https://faucet.spamnet.iota.org) sends 1Ki (1000) Spamnet tokens to your specified address.
+:::
 
-![Topology of the Spamnet](../spamnet-topology.png)
+![Spamnet configuration](../images/spamnet-topology.png)
+
+### Minimum weight magnitude
+
+Transactions on the Spamnet must use a [minimum weight magnitude](root://iota-basics/0.1/concepts/minimum-weight-magnitude.md) (MWM) of 7 to be valid. Compared to the Mainnet, this MWM reduces the time it takes for [proof of work](root://the-tangle/0.1/concepts/proof-of-work.md) (PoW) to be completed. So, it takes less time and computational power to create and send a transaction.
 
 ### IRI nodes
 
