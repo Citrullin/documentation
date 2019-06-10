@@ -5,7 +5,7 @@
 
 - [nRF52832](set-up-nrf52-microcontroller.md)
 - [Connected BME/BMP 280 sensor](connect-bosch-bme-280-bmp-280.md)
-- [Optional: Connected TSL2561 (Lux sensor), VEML6070 (UV sensor)](connect-a-I2C-sensor.md) 
+- Optional: [Connected TSL2561 (Lux sensor), VEML6070 (UV sensor)](connect-a-I2C-sensor.md) 
 or [other supported I2C sensors](http://riot-os.org/api/group__drivers__sensors.html)
 
 :::info:
