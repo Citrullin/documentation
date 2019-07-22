@@ -9,9 +9,9 @@ which collects environment sensor data and sends it to the tangle via MAMv1**
 
 ## Architecture
 
-![MAMv1 environment sensor architecture](../messagetoMAM.png)
+![MAMv1 environment sensor architecture](../images/messagetoMAM.png)
 
-## How to
+## How to run the Sensor2Tangle application
 
 1. Start the server on your microcontroller
     

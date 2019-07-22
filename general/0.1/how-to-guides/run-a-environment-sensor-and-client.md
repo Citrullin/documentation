@@ -35,7 +35,7 @@ This is exactly what we need in a lossy networks with small bandwidth.
 We might lose some packets, so we might need to send one message more than once. 
 If we would use TCP, this would lead to a big overhead, due to the connection based networking.
 
-## How to
+## How to run the sensor server and client
 
 1. Connect the DHT sensor to your nRF52
     
