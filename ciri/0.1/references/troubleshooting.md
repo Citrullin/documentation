@@ -56,4 +56,4 @@ Just follow [this article](https://www.tecmint.com/fix-user-is-not-in-the-sudoer
 ### Unable to locally verify the issuer's authority.
 
 You might broke your OpenSSL installation. This can happen when you for example tried to install LibreSSL or upgrade OpenSSL.
-The simplest solution is to just reinstall your operation system.
+The simplest solution is to just reinstall your operating system.

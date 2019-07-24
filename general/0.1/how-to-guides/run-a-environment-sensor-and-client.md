@@ -20,8 +20,7 @@ The environment sensor runs a server application. This server application uses t
 The example server application opens an UDP port and waits for incoming requests on this port. 
 The response will be sent back to the client on the same port the client sends a message.
 One example: 
-If the client (SBC or PC) sends an UDP packet 
-on port 90 (outgoing-port at the SBC) to port 51037 (incoming-port on the sensor), 
+If the client (SBC or PC) sends an UDP packet on port 90 (outgoing-port at the SBC) to port 51037 (incoming-port on the sensor), 
 the sensor will send the response to port 90 (SBC or PC).
 Therefore incoming- and outgoing-port are the same on each device. 
 In my example the sensor is receiving and sending the UDP packets on port 51037, 

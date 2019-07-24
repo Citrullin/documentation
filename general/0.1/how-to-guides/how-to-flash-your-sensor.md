@@ -4,14 +4,14 @@
 ## The differences: Firmware, OS and RTOS
 
 Microcontroller work different compared to normal PCs or SBCs. 
-On a normal PC/SBC, the operation system is located on some kind of storage system. (HDD, SDD, SD Card, eMMC)
+On a normal PC/SBC, the operating system is located on some kind of storage system. (HDD, SDD, SD Card, eMMC)
 Before the system can boot into the OS on your storage, the system has to able to communicate with this storage system.
 This is where the [firmware](https://en.wikipedia.org/wiki/Firmware#Personal_computers) comes into play.
 The firmware has the basic driver for this communication.
 Before your system runs the OS, it runs this firmware. The firmware tells the system how to start into your OS. 
 There are more components than just the storage system, but it gives a general understanding why a firmware exist.
 
-Microcontroller on the other hand only run the firmware. 
+Microcontrollers on the other hand only run the firmware. 
 When we speak about an OS in context of a Microcontroller, 
 we speak about [RTOS (realtime operation-systems)](https://en.wikipedia.org/wiki/Real-time_operating_system).
 In comparison to your OS on your PC/SBC, the RTOS is smaller and has to meet specific deadline requirements.
