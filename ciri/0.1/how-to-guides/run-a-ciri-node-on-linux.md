@@ -38,8 +38,17 @@ cIRI is still under development. You shouldn't use cIRI in a production environm
 
 5. Initialize the database
 
+    **Mainnet**
     ```bash
-    sqlite3 ciri/db/ciri-mainnet.db < common/storage/sql/schema.sql
+    sqlite3 ciri/db/tangle-mainnet.db < common/storage/sql/tangle-schema.sql
+    sqlite3 ciri/db/spent-addresses-mainnet.db < common/storage/sql/spent-addresses-schema.sql
+    ```
+    
+    **Testnet**
+    
+    ```bash
+    sqlite3 ciri/db/tangle-testnet.db < common/storage/sql/tangle-schema.sql
+    sqlite3 ciri/db/spent-addresses-testnet.db < common/storage/sql/spent-addresses-schema.sql
     ```
 
 6. Find some neighbors
@@ -47,6 +56,7 @@ cIRI is still under development. You shouldn't use cIRI in a production environm
     :::info:
     Read the [IRI guide](root://iri/0.1/how-to-guide/find-neighbor-iri-node.md) for help finding neighbors.
     :::
+
 
 7. Create a configuration file called conf.yaml in the `ciri` directory and add the following settings. In the `neighbors` field, add the IP addresses or URLs of your neighbors.
 
