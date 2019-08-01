@@ -30,8 +30,17 @@ sudo apt-get install sqlite3
 
 ## Initialize the database
 
+### Mainnet
 ```bash
-sqlite3 ciri/db/ciri-mainnet.db < common/storage/sql/schema.sql
+sqlite3 ciri/db/tangle-mainnet.db < common/storage/sql/tangle-schema.sql
+sqlite3 ciri/db/spent-addresses-mainnet.db < common/storage/sql/spent-addresses-schema.sql
+```
+
+### Testnet
+
+```bash
+sqlite3 ciri/db/tangle-testnet.db < common/storage/sql/tangle-schema.sql
+sqlite3 ciri/db/spent-addresses-testnet.db < common/storage/sql/spent-addresses-schema.sql
 ```
 
 ## Create a configuration file
