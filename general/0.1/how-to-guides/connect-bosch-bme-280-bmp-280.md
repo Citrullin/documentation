@@ -21,11 +21,11 @@ Pull low for selecting the SPI interface.
 
 3. Connect SDO to VDDIO.
 
-:::info:
-This gives the BME/BMP 280 the [I2C device address 0x77.](https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BMP280-DS001.pdf)
-(See "5.2 I²C Interface" for more information).
-If you want to use the BMP 180 and BME/BMP 280 together on one I2C bus, 
-you should pull SDO low, in order to avoid I2C address conflicts.
-If you do this, you have to change the I2C address in the RIOT configuration file bmx280_params.h
-:::
+    :::info:
+    This gives the BME/BMP 280 the [I2C device address 0x77.](https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BMP280-DS001.pdf)
+    (See "5.2 I²C Interface" for more information).
+    If you want to use the BMP 180 and BME/BMP 280 together on one I2C bus, 
+    you should pull SDO low, in order to avoid I2C address conflicts.
+    If you do this, you have to change the I2C address in the RIOT configuration file bmx280_params.h
+    :::
 

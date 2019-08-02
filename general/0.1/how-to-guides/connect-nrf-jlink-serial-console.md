@@ -83,7 +83,7 @@ You should use a black cable for GND and a red one for VCC
     
 2. Connect the Programmer to your PC
 
-If you use a J-Link or J-Link OB, you need to connect it via an USB-cable to your PC.
+    If you use a J-Link or J-Link OB, you need to connect it via an USB-cable to your PC.
     
 3. Connect the UART-to-USB dongle to your microcontroller
 

@@ -9,7 +9,7 @@
 or [other supported I2C sensors](http://riot-os.org/api/group__drivers__sensors.html)
 
 :::info:
-You might want to read our ["Run a nRF52 sensor and client"](../../../blueprints/0.1/environment-sensor/run-a-environment-sensor-and-client.md)
+You might want to read our ["Run a nRF52 sensor and client"](run-a-environment-sensor-and-client.md)
 in order to be able to use this sensor node in an advanced fashion
 :::
 
@@ -31,7 +31,7 @@ in order to be able to use this sensor node in an advanced fashion
     RIOT OS is a [microkernel operating system](https://wiki.osdev.org/Microkernel).
     The modulation helps to keep the operating as clean as possible.
     Only the needed functionality will be compiled into our app binary.
-    This is beneficial for microcontroller due to a general lower footprint.
+    This is beneficial for microcontrollers due to a general lower footprint.
     All DRIVER_NAMES for the pattern ```USEMODULE += DRIVER_NAME``` can be found in the directory
     drivers. Some driver have a x variable in their namings. 
     For example the BME/BMP 280 driver is named bmx280.
@@ -86,7 +86,7 @@ in order to be able to use this sensor node in an advanced fashion
     ```
     
     By executing  `saul read ID` you can read the current sensor value. 
-    If you want to read all sensor, just execute `saul read all`.
+    If you want to read all sensors, just execute `saul read all`.
     
     The shell should only be used for debugging. 
     Follow the guide ["Run a nRF52 sensor and client"](../../../blueprints/0.1/environment-sensor/run-a-environment-sensor-and-client.md) to get a complete sensor server and client running.

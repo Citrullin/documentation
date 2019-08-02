@@ -13,7 +13,7 @@ There are more components than just the storage system, but it gives a general u
 
 Microcontrollers on the other hand only run the firmware. 
 When we speak about an OS in context of a Microcontroller, 
-we speak about [RTOS (realtime operation-systems)](https://en.wikipedia.org/wiki/Real-time_operating_system).
+we speak about [RTOS (realtime operating-systems)](https://en.wikipedia.org/wiki/Real-time_operating_system).
 In comparison to your OS on your PC/SBC, the RTOS is smaller and has to meet specific deadline requirements.
 The RTOS is also embedded into the firmware. 
 When we write an application on our RTOS, we combine everything into one binary and flash it onto the flash memory of

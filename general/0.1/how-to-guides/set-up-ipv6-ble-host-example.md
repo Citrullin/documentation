@@ -29,7 +29,7 @@ such as the nRF52840 is in progress. We will update the documentation when this 
     :::info:
     This is only an example application. You can replace the server with your own implementation, if you want to.
     The server logic is written in BLE-environment-sensor/examples/env_sensor_network/server.c
-    Get a general understand about the [flashing process](../../../general/0.1/how-to-guides/how-to-flash-your-sensor.md).
+    Get a general understand about the [flashing process](how-to-flash-your-sensor.md).
     :::
 
     Go to the example directory

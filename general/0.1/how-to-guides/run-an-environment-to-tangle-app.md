@@ -4,7 +4,7 @@ which collects environment sensor data and sends it to the tangle via MAMv1**
 
 ## Prerequisites
 
-- [Configured 6LoWPAN network](../../../general/0.1/how-to-guides/set-up-a-bluetooth-star-network.md)
+- [Configured 6LoWPAN network](set-up-a-bluetooth-star-network.md)
 - [Installed Bazel](https://docs.bazel.build/versions/master/install.html)
 
 ## Architecture

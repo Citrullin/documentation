@@ -8,7 +8,7 @@ Make sure that you selected a 64-bit version of Ubuntu in VirtualBox.
 
 Try rebooting your computer to see if that resolves any issues.
 
-## Setup SBC
+## Set up SBC
 
 ### Can you successfully login to your device and just some characters are weird? 
 

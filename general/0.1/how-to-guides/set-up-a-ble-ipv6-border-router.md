@@ -25,11 +25,11 @@ Due to [a bug](https://github.com/RIOT-OS/RIOT/issues/11147), you need to use an
     sudo dpkg -i linux-image*.deb
     ```
 
-3. Reboot and select the kernel
+3. Reboot your system and press the SHIFT key while bootup. 
+    
+   You need to select the kernel version 4.11.12
 
-    Reboot your system and press the SHIFT key while bootup. You need to select the kernel version 4.11.12
-
-## Installation
+## Install 6LoWPAN dependencies
 
 :::info:
 You need to do this every session. So, if you close your session,

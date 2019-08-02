@@ -1,18 +1,17 @@
 # Run a nRF52 sensor and client
-**In this guide we create a professional 6LoWPAN IoT sensor node setup. 
-The sensor gets an individual IPv6 address. Therefore, we can send UDP/IP packets to this sensor.**
+**In this guide you create a 6LoWPAN IoT sensor node setup. The sensor gets an individual IPv6 address. Therefore, we can send UDP/IP packets to this sensor.**
 
 ## Prerequisites
 
-- [Configured 6LoWPAN network](../../../general/0.1/how-to-guides/set-up-a-bluetooth-star-network.md)
-- [Installed nRF toolchain](../../../general/0.1/how-to-guides/set-up-nrf-toolchain.md)
+- [Configured 6LoWPAN network](set-up-a-bluetooth-star-network.md)
+- [Installed nRF toolchain](set-up-nrf-toolchain.md)
 - [Installed Golang toolchain](https://golang.org/doc/install)
 - DHT11- or DHT22-sensor
 - nRF52832
 
 ## Architecture
 
-![Environment sensor architecture](../architecture_visualisation.png)
+![Environment sensor architecture](../images/architecture_visualisation.png)
 
 ### Sensor
 
