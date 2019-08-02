@@ -1,4 +1,4 @@
-# Connect a J-Link/DAPLink and serial console to your nRF5x microcontroller
+# Connect a programmer and UART adapter to your nRF5x microcontroller
 
 *In order to be able to flash your nRF5x microcontroller, you need to wire your J-Link to your nRF MCU.
 This guide describes how you can do this.*

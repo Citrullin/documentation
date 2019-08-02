@@ -5,18 +5,7 @@
 
 - nRF52832 development board
 - Linux based PC
-
-:::info:
-You have a lot of options for your nRF52832 development board.
-To name a few options:
-- nRF52832 breakout board by Sparkfun @ ~20 USD
-- nRF52 DK @ ~40 USD
-- nRF52832-MDK @ ~30 USD
-- nRF52832 USB Dongle @ ~10 USB
-- chinese nRF52832 module + nrf52832 Minimum Test Board @ ~10 USD
-:::
-
-- J-Link, J-Link OB clone or DAPLink
+- One [Programmer](https://www.engineersgarage.com/tutorials/microcontroller-programmer-burner), internal or external: J-Link, J-Link OB clone or DAPLink
 
 :::info
 Some development boards have an integrated J-Link or DAPLink. If you have one of these boards, you don't need an additional
@@ -41,7 +30,7 @@ J-Link. Check the datasheet of your development board before.
     **chinese nRF52832 module + nrf52832 Minimum Test Board**
     ![chinese nRF52832 minimum test board soldered](../images/nrf52_cheap_board.png)
     
-2. [Connect your J-Link/DAPLink and USB-to-UART adapter](connect-nrf-jlink-serial-console.md)
+2. [Connect your Programmer and USB-to-UART adapter](connect-nrf-jlink-serial-console.md)
 
     :::info
     If your board has an integrated J-Link/DAPLink, you don't need to connect the J-Link to your board. 
