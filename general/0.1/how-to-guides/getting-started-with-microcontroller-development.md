@@ -30,7 +30,7 @@
     If you picked a microcontroller dev board with an internal programmer, 
     you should check the technical documentation for your device. 
     If you bought a bare development board, you can buy a J-Link, J-Link or J-Link OB clone.
-    If you use an external programmer, you need to [connect it to your development board.](connect-nrf-jlink-serial-console.md)
+    If you use an external programmer, you need to [connect it to your development board.](connect-programmer-and-uart-adapter.md)
     
 4. Buy an UART-to-USB-Adapter
 
