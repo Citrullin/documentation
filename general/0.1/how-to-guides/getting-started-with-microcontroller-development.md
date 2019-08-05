@@ -76,6 +76,9 @@
     This is not necessary, but recommended if you want to get a complete permanent usable setup.
     This is important, if you want to run your sensor 24h a day. A SBC can also act as [IOTA node](root://ciri/0.1/how-to-guides/run-a-ciri-node-on-an-sbc.md).
     
+    If you do not want to invest much money, you can pick devices like the Raspberry Pi Zero or Orange Pi Zero. 
+    You should choose a device with Wi-Fi and Bluetooth LE (Bluetooth version >= 4.0).
+    
 7. [Connect your programmer and UART-to-USB Adapter](connect-programmer-and-uart-adapter.md)
 
 8. Optional: Buy an I2C environment sensor. For example the BME280 used in the [run an environment sensor and client](run-a-environment-sensor-and-client.md) guide.
