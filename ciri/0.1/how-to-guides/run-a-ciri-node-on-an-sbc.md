@@ -75,8 +75,6 @@ You can customize these commands by editing the build flags.
 
 
 1. Choose which [IOTA network](root://getting-started/0.1/references/iota-networks.md) you want your node to run on. Replace `value` with `mainnet` or `testnet`.
-
-
     ```bash
     --define network=value
     ```
@@ -179,6 +177,24 @@ Your node stores the transactions that it receives in a sqlite3 database.
 
 2. Initialize the database
 
+    **Mainnet**
+    ```bash
+    mkdir -p db
+    wget https://raw.githubusercontent.com/iotaledger/entangled/develop/common/storage/sql/tangle-schema.sql -O tangle-schema.sql
+    wget https://raw.githubusercontent.com/iotaledger/entangled/develop/common/storage/sql/spent-addresses-schema.sql -O spent-addresses-schema.sql
+    sqlite3 /etc/iota/ciri/db/tangle-mainnet.db < tangle-schema.sql
+    sqlite3 /etc/iota/ciri/db/spent-addresses-mainnet.db < spent-addresses-schema.sql
+    ```
+    
+    **Testnet**
+    ```bash
+    mkdir -p db
+    wget https://raw.githubusercontent.com/iotaledger/entangled/develop/common/storage/sql/tangle-schema.sql -O tangle-schema.sql
+    wget https://raw.githubusercontent.com/iotaledger/entangled/develop/common/storage/sql/spent-addresses-schema.sql -O spent-addresses-schema.sql
+    sqlite3 /etc/iota/ciri/db/tangle-testnet.db < tangle-schema.sql
+    sqlite3 /etc/iota/ciri/db/spent-addresses-testnet.db < spent-addresses-schema.sql
+    ```
+
     ```bash
     mkdir -p db
     wget https://raw.githubusercontent.com/iotaledger/entangled/develop/common/storage/sql/schema.sql -O schema.sql
@@ -196,7 +212,6 @@ Your node stores the transactions that it receives in a sqlite3 database.
 ## Run cIRI
 
 Replace the values in the flags with the ones from these files:
-* [conf.bzl](https://raw.githubusercontent.com/iotaledger/entangled/develop/consensus/conf.bzl)
 * [snapshot.json](https://raw.githubusercontent.com/iotaledger/snapshots/master/mainnet/20181222/snapshot.json)
 
 :::info:
@@ -208,9 +223,8 @@ With tmux, the execution of the program continues even if you log out.
 ./app \
 --snapshot-file="external/snapshot_mainnet/file/downloaded" \
 --snapshot-signature-file="external/snapshot_sig_mainnet/file/downloaded" \
---snapshot-signature-index=signature.index \
---snapshot-signature-depth=signature.depth \
---snapshot-signature-pubkey="signature.pubkey" \
---num-keys-in-milestone=NUM_KEYS_IN_MILESTONE \
---db-path="db/mainnet.db"
+--snapshot-signature-index=10 \
+--snapshot-signature-depth=6 \
+--snapshot-signature-pubkey="TTXJUGKTNPOOEXSTQVVACENJOQUROXYKDRCVK9LHUXILCLABLGJTIPNF9REWHOIMEUKWQLUOKD9CZUYAC" \
+--tangle-db-path="db/tangle-mainnet.db"
 ```
