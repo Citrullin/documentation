@@ -40,8 +40,7 @@ There are two types of routing protocols. Mesh-under and route-over.
 
 ## Mesh-under
 
-Mesh-under describes a type of routing protocol which uses the Layer 2 (Mac Layer) for its routing. It is therefore similar to
-Ethernet. Mesh-under broadcasts the packets in the network. Mesh-under produces more load on the network than route-over.
+Mesh-under describes a type of routing protocol which uses the Layer 2 (Mac Layer) for its routing. It is therefore similar to Ethernet. Mesh-under broadcasts the packets in the network. Mesh-under produces more load on the network than route-over.
 Mesh-under protocols should only be used for smaller networks. 
 Mesh-under has typically a lower latency than route-over.
 Mesh-under routing has a disadvantage in scalability.
@@ -54,13 +53,11 @@ Route-over requires knowledge about the neighbors. For example Neighbor Discover
 Due to the multicast packets, Route-over is giving the Neighbor Discovery protocol a disadvantage.
 Route-over routing has a advantage in scalability.
 
-
-
 ## Naming convention
 
 ### LLN
 
-LLN stands for Low power and Lossy Networks. 
+LLN stands for low power and lossy networks. 
 It describes a type of network where some devices might be not be available all the time. 
 For example when a device only wakes up in a certain interval.
 It also describes a network where a packet might get lost, due to unreliable devices.
@@ -109,17 +106,17 @@ RPL is a routing protocol used for 6LoWPAN.
 The standard is defined in [RFC 6550](https://datatracker.ietf.org/doc/rfc6550/).
 [This video series](https://www.youtube.com/watch?v=6AP7p0sbBro&t=45s) is a good resource to get into details how it works.
 
-### 6LBR (6LoWPAN Border Router)
+### 6LBR (6LoWPAN border router)
 
-Border router are connecting the 6LoWPAN with an IPv6 network. To keep it simple:
-The Border router connects our IoT mesh network to the Internet. 
-The Border router is not necessarily connecting the mesh 6LoWPAN directly to the Internet.
-The router can also be connected to a private or public Wifi.
+Border router are connecting the 6LoWPAN with an IPv6 network.
+
+The border router connects our IoT mesh network to the Internet. 
+The border router is not necessarily connecting the mesh 6LoWPAN directly to the Internet.
+The router can also be connected to a private or public WiFi.
 Some resources refer it as edge router.
 
-### 6LR (6LoWPAN Router)
+### 6LR (6LoWPAN router)
 
-A 6LR routes the packets to hosts or other 6LR nodes. The only difference between a 6LBR and a 6LR is the connection to
-the Internet.
+A 6LR routes the packets to hosts or other 6LR nodes. The only difference between a 6LBR and a 6LR is the connection to the Internet.
 
 

@@ -1,13 +1,15 @@
-# Environment sensor to tangle
-**In this guide, we are going to run an application 
-which collects environment sensor data and sends it to the tangle via MAMv1**
+# Environment sensor to Tangle
+
+**In this guide, run an application that collects environment sensor data and attaches it to the Tangle on MAM channels, using MAMv1**
 
 ## Prerequisites
 
-- [Configured 6LoWPAN network](set-up-a-bluetooth-star-network.md)
-- [Installed Bazel](https://docs.bazel.build/versions/master/install.html)
+- [Set up a Bluetooth star network](set-up-a-bluetooth-star-network.md)
+- [Install Bazel](https://docs.bazel.build/versions/master/install.html)
 
 ## Architecture
+
+The border router asks the sensor server for information, then sends that information to the Internet.
 
 ![MAMv1 environment sensor architecture](../images/messagetoMAM.png)
 
@@ -15,67 +17,62 @@ which collects environment sensor data and sends it to the tangle via MAMv1**
 
 1. Start the server on your microcontroller
     
-    You need to execute the following command in the serial console on your microcontroller.
-    The shell terminal of your microcontroller is opened in the terminal where you executed ```make flash term```
-    
-    Execute the following command:
+    :::info:
+    You need to execute the following command in the serial console of your microcontroller.
+    The shell terminal of your microcontroller is opened in the terminal where you executed `make flash term`.
+    :::
     
     ```bash
     server start
     ```
     
-2. Clone the environment sensor client and MAM writer
+2. Clone the environment sensor client and MAM writer on your SBC
 
-```bash
-git clone git@github.com:iota-community/env-sensor-mam-writer.git
-```
+    ```bash
+    git clone https://github.com/iota-community/env-sensor-mam-writer.git
+    ```
 
-3. Change the configuration
+3. Change the configuration variables in the `app/server-client.c` file
 
-Before you run the application, you might need to some variables in app/server-client.c
+    |**Variable**|**Description**|**Notes**|
+    |:-------|:----------|:----|
+    |`IOTA_SEED`| The seed that you want to use to sign MAM messages|You should change this default seed to your own, which does not contain any addresses that contain IOTA tokens|
+    |`CLIENT_ADDRESS`| The IPv6 client address as a hex array|For example, the`fe80::f2d5:bfff:fe10:f1b1` address becomes `{ 0xfe, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xf2, 0xd5, 0xbf, 0xff, 0xfe, 0x10, 0xf1, 0xb1 }`. The university of Iowa has a [good explanation how the IPv6 addressing works.](https://its.uiowa.edu/support/article/1209).|
+    |`SENSOR_ADDRESS`|The IPv6 address of the sensor node|Execute the command `ifconfig` on the shell of your sensor node, to find this address|
 
-IOTA_SEED contains a default seed. You should change it to your own seed. This seed should not contain any IOTA tokens.
+4. Run the environment sensor server by executing the following command on the sensor's shell terminal
 
-``CLIENT_ADDRESS`` contains the IPv6 client address as hex array. 
-In my case the address ``fe80::f2d5:bfff:fe10:f1b1`` becomes to 
-``{ 0xfe, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xf2, 0xd5, 0xbf, 0xff, 0xfe, 0x10, 0xf1, 0xb1 }``
-The university of Iowa has a [good explanation how the IPv6 addressing works.](https://its.uiowa.edu/support/article/1209)
-The IPv6 must be assigned to network interface you want to use. 
-
-The variable ``SENSOR_ADDRESS`` contains the IPv6 address of the sensor node.
-Execute the command ``ifconfig`` on the shell of your sensor node, in order to get the correct IP address.
-
-4. Run the environment sensor server
-
-You need to execute the following command on the sensor shell:
-```bash
-server start
-```
+    ```bash
+    server start
+    ```
 
 5. Run the writer application
 
-```bash
-cd env-sensor-mam-writer &&  bazel run -c opt //app
-```
+    ```bash
+    cd env-sensor-mam-writer &&  bazel run -c opt //app
+    ```
 
-The application will request the environment data from the give sensor. 
-The data will be written into a MAM channel. The writer application logs the address and bundle.
-You need to notice these values, in order to receive your message. 
+    The application requests the environment data from the sensor, then publishes that data to a MAM channel.
 
-6. Clone the reader application
+    Make a note of both the address and the bundle hash, which are logged to the console.
 
-```bash
-git clone git@github.com:iota-community/env-sensor-mam-reader.git
-```
+6. Clone the reader application on your SBC
 
-7. Change the configuration in the reader application
+    ```bash
+    git clone https://github.com/iota-community/env-sensor-mam-reader.git
+    ```
 
-Change ``IOTA_ADDRESS`` and ``IOTA_BUNDLE`` to the values logged by the writer application.
+7. Change the configuration variables in the `app/sensor_receiver.c` file
+
+    |**Variable**|**Description**|
+    |:-------|:----------|
+    |`IOTA_ADDRESS`|The address that was returned by the writer application|
+    |`IOTA_BUNDLE`|The bundle hash that was returned by the writer application|
 
 8. Run the reader application
 
-```bash
-cd env-sensor-mam-reader && bazel run -c opt //app
-```
+    ```bash
+    cd env-sensor-mam-reader && bazel run -c opt //app
+    ```
 
-The application logs the written temperature. 
+The application logs the temperature data it gets from the MAM channel on the Tangle.
