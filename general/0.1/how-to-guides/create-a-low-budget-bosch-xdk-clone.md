@@ -4,9 +4,9 @@
 
 ## Prerequisites
 
-- [Set up an nRF52 microcontroller](set-up-nrf52-microcontroller.md)
-- [Connect a BME/BMP 280 sensor to the microcontroller](connect-bosch-bme-280-bmp-280.md)
-- **Optional:** [Connect a TSL2561 (Lux sensor), VEML6070 (UV sensor)](connect-a-I2C-sensor.md) or [other supported I2C sensor](http://riot-os.org/api/group__drivers__sensors.html) to the microcontroller
+- [Set up an nRF52 microcontroller](../how-to-guides/set-up-nrf52-microcontroller.md)
+- [Connect a BME/BMP 280 sensor to the microcontroller](../how-to-guides/connect-bosch-bme-280-bmp-280.md)
+- **Optional:** [Connect a TSL2561 (Lux sensor), VEML6070 (UV sensor)](../how-to-guides/connect-a-I2C-sensor.md) or [other supported I2C sensor](http://riot-os.org/api/group__drivers__sensors.html) to the microcontroller
 
 ---
 

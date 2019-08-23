@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-- [Set up a Bluetooth star network](set-up-a-bluetooth-star-network.md)
+- [Set up a Bluetooth star network](../how-to-guides/set-up-a-bluetooth-star-network.md)
 - [Install Bazel](https://docs.bazel.build/versions/master/install.html)
 
 ## Architecture

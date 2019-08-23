@@ -8,8 +8,8 @@ Due to a bug in RIOT OS, only the nRF52832 is supported at the moment. An implem
 
 ## Prerequisites
 
-- [Set up an nRF52832 microcontroller](set-up-nrf52-microcontroller.md)
-- [Connect a BME/BMP 280 sensor to the microcontroller](connect-bosch-bme-280-bmp-280.md)
+- [Set up an nRF52832 microcontroller](../how-to-guides/set-up-nrf52-microcontroller.md)
+- [Connect a BME/BMP 280 sensor to the microcontroller](../how-to-guides/connect-bosch-bme-280-bmp-280.md)
 - Linux-based PC that's connected to your microcontroller
 
 ---
