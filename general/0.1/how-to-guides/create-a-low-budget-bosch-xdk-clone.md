@@ -26,7 +26,7 @@
     If you're using the optional TSL2561 and VEML6070 sensors, also add `USEMODULE += tsl2561` and `USEMODULE += veml6070` to the file.
     :::
     
-3. Compile and flash the operating system and application. Replace the `$BOARD` AND `$USB_PORT` placeholders with the name of your board AND the path to your USB-to-UART connector such as `/dev/ttyUSB0` 
+3. Compile and flash the operating system and the application. Replace the `$BOARD` AND `$USB_PORT` placeholders with the name of your board and the path to your USB-to-UART connector such as `/dev/ttyUSB0`.
     
     ```bash
     BOARD=BOARD PORT=USB_PORT make flash term
@@ -66,10 +66,10 @@
     #13	SENSE_UV	veml6070
     ```
     
-5. To read the data from a particular sensor, do `saul read` followed by an ID. To read the data from all sensors, do `saul read all`.
+5. To read the data from a particular sensor, execute the `saul read` command followed by an ID. To read the data from all sensors, execute the `saul read all` command.
 
 ## Next steps
 
-You should read sensor data from a shell session only while debugging.
+You should read sensor data from a shell session only while you debug an application.
 
-For a real application, [set up a sensor server](../how-to-guides/run-a-environment-sensor-and-client.md) that allows clients to connect to it and read its data. 
+For a production application, you can [set up a sensor server](../how-to-guides/run-a-environment-sensor-and-client.md) that allows clients to connect to it and read its data. 

@@ -1,43 +1,66 @@
 # Troubleshooting
 
-## This kernel requires an x86-64 CPU
-
-Make sure that you selected a 64-bit version of Ubuntu in VirtualBox.
-
-## When in doubt
-
-Try rebooting your computer to see if that resolves any issues.
-
-## Set up SBC
-
-### Can you successfully login to your device and just some characters are weird? 
-
-If you can read the messages while system boot and just some characters are weird, this is not abnormal. 
-Just continue using it. You should switch to an SSH terminal as fast as possible 
-due to some problems with the serial terminal.
-
-### Have you checked your baud rate? 
-Take a look into the documentation of your device or ask in some forum. 
-It might be the case that your device is not configured correctly. Just try common baud rates.
-
-### Are you using a standard USB charger or the USB-port of a PC to power up your device?
-
-You might want to try a more powerful power supply. Usually the powerful ones have a fixed Micro-USB cable.
-Make sure to buy one with at least 2A. Better: 3A.
+**You may find some of these common issues while following these guides.**
 
 ## Set up a IPv6 over Bluetooth Low Energy border router
 
 ### none already mounted or mount point busy.
 
-When you get this response
+If you see this response, ignore it. The file system is probably already mounted.
+
 ```bash
 mount: /sys/kernel/debug: none already mounted or mount point busy.
 ```
-just continue with the guide. The file system is probably already mounted.
 
-## Flash a nRF5x microcontroller
+## Set up an nRF52 microcontroller
 
-###  recipe for target 'flash' failed
+### Permission denied
+
+If you see a `permission denied` error while trying to flash your microcontroller, and you're using a DAPLink programmer, create a udev rule by doing the following:
+
+1. Clone the pyOCD repository
+
+  ```bash
+  git clone https://github.com/mbedmicro/pyOCD.git
+  ```
+
+2. Change into the `pyOCD/udev` directory
+
+  ```bash
+  cd pyOCD/udev
+  ```
+
+3. [Follow the pyOCD instructions](https://github.com/mbedmicro/pyOCD/tree/master/udev) for creating a udev rule
+
+### arm-none-eabi-gcc version not supported
+
+If you see the `arm-none-eabi-gcc version not supported` message, install the latest version of the toolchain by doing the following:
+
+1. Uninstall the old toolchain packages
+
+  ```bash
+  sudo apt remove binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi
+  ```
+
+2. [Download the latest toolchain from developer.arm.com](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
+
+3. Untar the toolchain in your `home` directory. Replace the `$FILENAME` placeholder with the name of the file that you downloaded
+
+  ```bash
+  tar -xjvf $FILENAME
+  ```
+
+4. Add the toolchain to your path. Replace the `$PATHTOFILE` placeholder with the path to your untarred toolchain
+
+  ```bash
+  echo "export PATH=$PATH:/home/$PATHTOFILE/bin/" >> ~/.bashrc
+  ```
+
+5. Close the terminal window, and open a new one
+
+Now, you should have a supported version of the toolchain
+
+### Recipe for target 'flash' failed
 
 When you use a J-Link OB clone for the first time the flashing might fail. 
 Don't be surprised to receive a message like this
@@ -47,8 +70,7 @@ recipe for target 'flash' failed
 make: *** [flash] Error 1
 ```
 
-If the J-Link OB clone was upgraded before, everything works fine. After the upgrade, you can execute the flash
-command a second time and the flashing works like expected. The upgrade which leads to the temporary error looks
+If the J-Link OB clone was upgraded before, everything works fine. After the upgrade, you can execute the flash command a second time and the flashing works like expected. The upgrade which leads to the temporary error looks
 like this:
 
 ```bash
