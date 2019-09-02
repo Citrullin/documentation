@@ -1,13 +1,13 @@
 # What is a transaction?
 
-**A transaction is an instruction that sends data or IOTA tokens to an address or debits IOTA tokens from an address.**
+**If you want to send anything to an IOTA network, you must send it to a node in the form of a transaction. A transaction is a single operation that can be either an input or an output.**
 
-Transactions are sent to IRI nodes in [bundles](../introduction/what-is-a-bundle.md).
+An **input transaction** withdraws IOTA tokens from an address. This transaction must contain the signature that signs the bundle and proves ownership of the address.
 
-Transactions can be one of the following types:
-* **Input transaction:** Debits IOTA tokens from an addresses and contains the signature that proves ownership of the address. If the signature is too large, it's fragmented over zero-value output transactions in the bundle.
-* **Output transaction:** Credits IOTA tokens to a recipient's address or contains no value (a zero-value transaction).
+An **output transaction** deposits IOTA tokens into a recipient's address or contains no value (a zero-value transaction).
 
-All transactions are feeless.
+Before you send transactions to a node they're always grouped into a bundle.
 
-[Learn more about addresses and signatures in transactions](root://iota-basics/0.1/concepts/addresses-and-signatures.md).
+Bundles are necessary so that nodes know which transactions contain related information. For example, if a transaction's signature is too large, it's fragmented over several zero-value output transactions in the same bundle.
+
+Another example is that to transfer IOTA tokens, you need at least one input transaction to withdraw the IOTA tokens and one output transaction to deposit the tokens into a new address. To do so, you group those transactions in the same bundle.

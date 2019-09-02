@@ -1,8 +1,7 @@
 # Index
 
 [Introduction/Overview](/introduction/overview.md)
-[Concepts/About Compass](/concepts/about-compass.md)
-[Concepts/Security considerations](/concepts/security-considerations.md)
-[How-to Guides/Create an IOTA network](/how-to-guides/create-an-iota-network.md)
+[How-to Guides/Set up a private Tangle](/how-to-guides/set-up-a-private-tangle.md)
+[References/Compass configuration options](/references/compass-configuration-options.md)
+[References/Merkle tree compute times](/references/merkle-tree-compute-times.md)
 [References/Troubleshooting](/references/troubleshooting.md)
-[References/Contribution guidelines](/references/contribution-guidelines.md)

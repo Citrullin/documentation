@@ -1,16 +1,38 @@
-# Compass overview
+# Private Tangle overview
 
-**Compass is an open-source [Coordinator](root://the-tangle/0.1/concepts/the-coordinator.md) that can be used to protect an IOTA network against attacks. Any transaction that's referenced by a Compass milestone is considered confirmed by any IRI nodes in the network.**
+**A private Tangle is an IOTA network that you control and that contains only nodes that you know. A private Tangle uses the same technology as the public IOTA networks, except you control it by running an open-source implementation of the Coordinator called Compass. You can use Compass to allow nodes to reach a consensus on transactions attached to your private Tangle. If Compass stops, no transactions in your IOTA network will be confirmed until it starts again.**
 
-Compass sends honest, zero-value milestones to IRI nodes at regular intervals. Milestones can't modify balances or censor transactions because all transactions, including milestones, are [validated by each IRI node](root://iri/0.1/concepts/transaction-validation.md) in the network.
+## Reasons to set up a private Tangle
 
-You can use Compass to [create your own IOTA network](../how-to-guides/create-an-iota-network.md) for the following use cases:
+You may want to set up a private Tangle for the following reasons:
 
-- **Security testing and research:** Use Compass to create a controlled environment to test assumptions and produce attacks.
-- **Development of proof of concepts:** Use Compass to develop proof-of-concept applications without sharing your ideas on a [permissionless network](root://getting-started/0.1/references/iota-networks.md).
+**Explore the technology:** If you have little or no experience with IOTA, you can set up your own private Tangle to help you understand the technology and how you can benefit from it.
 
-**Note:** By releasing Compass, the IOTA Foundation aims to further its research into finding a viable replacement for the Coordinator.
+**Set up a faster IOTA network:** If your use cases need a faster network speed than the public IOTA networks can currently provide, you can set up your own private Tangle to increase the number of transactions per second. For example, you could lower the value of the [minimum weight magnitude](root://dev-essentials/0.1/concepts/minimum-weight-magnitude.md) to make proof of work quicker.
+
+**Develop and test an application:** If you want to develop or test an application on IOTA, you may want to do so on a private Tangle so that your transactions aren't visible to the public. Having a private Tangle also has the added benefit of being able to reset the network to start all tests from the same point.
+
+**Showcase the technology:** If you want to show your ideas to others, you may want to set up a private Tangle so you can make sure that everything runs smoothly during your presentation.
+
+## How a private Tangle works
+
+IOTA is a distributed network of nodes that validate transactions and store them. Before nodes can update the balance of an address, they must reach a consensus on any transactions that lead to the updated balance. When nodes reach a consensus, on transactions, those transactions are confirmed.
+
+On the IOTA Mainnet, the [Coordinator](root://dev-essentials/0.1/concepts/the-tangle.md#the-coordinator) creates, signs, and sends bundles that contain milestones. The nodes on this network use these milestone to reach a consensus. Any transaction that's referenced and approved by a milestone is confirmed.
+
+Compass is an open-source implementation of the Coordinator. You can use Compass to allow the nodes in your own IOTA network to reach a consensus on Compass' milestones instead of the Coordinator's ones.
+
+To allow your nodes to reach a consensus, you must configure your nodes to recognize Compass milestones. Then, you can configure Compass to send milestones to one of your nodes at regular intervals.
 
 ## Repository
 
-Jump directly to the Compass source code on [Github](https://github.com/iotaledger/compass)
+Go to the Compass source code on [Github](https://github.com/iotaledger/compass)
+
+## Further reading 
+
+- [IOTA papers discussing the Tangle and other protocol features](https://www.iota.org/research/academic-papers)
+- [A series of posts discussing the removal of the Coordinator](https://blog.iota.org/coordinator-part-1-the-path-to-coordicide-ee4148a8db08)
+
+## Next steps
+
+[Set up a private Tangle](../how-to-guides/set-up-a-private-tangle.md).
