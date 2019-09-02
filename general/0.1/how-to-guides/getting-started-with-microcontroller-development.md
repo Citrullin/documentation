@@ -42,26 +42,26 @@
     
 5. Optional: Buy DuPont cables, pin headers and breadboard
 
-    This is not necessary for some boards. To be sure, we highly recommend to by it.
+    This is not necessary for some boards. To be sure, we highly recommend to buy it.
     You might need it at some point.
     For example, if you try to connect more than one I2C sensor to one I2C port. 
 
     **DuPont cable**
     
-    You can order DuPont cable usally in packs of 10, 20 etc.
+    You can order DuPont cable usually in packs of 10, 20 etc.
     It is recommended to buy different ones in different sizes.
     
     ![DuPoint cables](../images/dupont_cable.png)
     
     From left to right: female-to-female, male-to-female, male-to-male
     
-    **breadboard**
+    **Breadboard**
     
     There are also different types of breadboards. These two are the most used ones.
     
     ![breadboard](../images/breadboards.png)
     
-    **pin header**
+    **Pin header**
     
     The most common used header are male-to-male. 
     It is simple to separate them into smaller parts with a nipper.
@@ -76,12 +76,14 @@
     This is not necessary, but recommended if you want to get a complete permanent usable setup.
     This is important, if you want to run your sensor 24h a day. A SBC can also act as [IOTA node](root://ciri/0.1/how-to-guides/run-a-ciri-node-on-an-sbc.md).
     
-    If you do not want to invest much money, you can pick devices like the Raspberry Pi Zero or Orange Pi Zero. 
+    If you do not want to invest much money, you can pick devices like the Raspberry Pi Zero W or Orange Pi Zero. 
     You should choose a device with Wi-Fi and Bluetooth LE (Bluetooth version >= 4.0).
     
 7. [Connect your programmer and UART-to-USB Adapter](connect-programmer-and-uart-adapter.md)
 
 8. Optional: Buy an I2C environment sensor. For example the BME280 used in the [run an environment sensor and client](run-a-environment-sensor-and-client.md) guide.
+
+    Check the [driver list](http://www.riot-os.org/api/group__drivers__saul.html) before. 
 
 9. Follow a microcontroller based guide and [flash your firmware to your microcontroller](how-to-flash-your-sensor.md)
 
