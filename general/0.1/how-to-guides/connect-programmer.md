@@ -6,10 +6,9 @@
 
 To complete this guide, you need the following:
 
-- Linux-based PC
-- A programmer (J-Link or DAPLink)
-- nRF5 series microcontroller with a development board
-- **Optional:** DuPont cables to connect the programmer to your microcontroller
+- Linux-based PC to which to connect the programmer
+- A programmer (J-Link, J-Link OB clone, or DAPLink)
+- An nRF52 series microcontroller
 
 :::info:
 If you want a cheap option for flashing an nRF52 series microcontroller, consider buying a J-Link on-board (OB) clone.

@@ -1,4 +1,4 @@
-# Set up an IPv6 sensor server
+# Set up a sensor server
 
 **In this guide, we are going to set up a sensor server that accepts UDP packages on port 51037.**
 

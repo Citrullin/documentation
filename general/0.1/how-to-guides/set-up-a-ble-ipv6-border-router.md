@@ -1,4 +1,4 @@
-# Set up an IPv6 over Bluetooth Low Energy border router
+# Set up a border router
 
 **We are setting up an 6LoWPAN over Bluetooth interface on Linux. This makes it possible to use a UDP/IP (IPv6) stack on an IoT BLE devices**
 
@@ -6,7 +6,7 @@
 
 To complete this guide, you need the following:
 
-- Either a single-board computer such as a Raspberry Pi or a PC to use as the border router
+- Either a single-board computer such as a Raspberry Pi or a Linux-based PC to use as the border router
 - A Linux distribution such as Ubuntu
 - Bluetooth <= 4.0 (USB dongle or integrated)
 
@@ -25,11 +25,11 @@ To complete this guide, you need the following:
     sudo dpkg -i linux-image*.deb
     ```
 
-3. Reboot your system and hold the SHIFT key while it starts 
+3. Restart your system while holding the SHIFT key until you see the option to select a kernel 
     
 4. Select the kernel version 4.11.12
 
-## Step 2. Install 6LoWPAN dependencies
+## Step 2. Install the 6LoWPAN dependencies
 
 :::info:
 You need to do these steps for every session. So, if you close your session,

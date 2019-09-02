@@ -18,10 +18,10 @@ We use this series of microcontrollers in these tutorials because they include B
     Make sure that the development board does not have half pin holes.
     :::
 
-    When you buy a microcontroller, keep the following in mind:
+When you buy a microcontroller, keep the following in mind:
 
-    - If your microcontroller does not have an integrated programmer (sometimetimes called a debugger), you'll need to buy a separate one
-    - If your microcontroller does not have an integrated USB-to-UART connector (sometimes called a USB to TTL serial connector), you'll need to buy a separate one
+- If your microcontroller does not have an integrated programmer (sometimetimes called a debugger), you'll need to buy a separate one
+- If your microcontroller does not have an integrated USB-to-UART connector (sometimes called a USB to TTL serial connector), you'll need to buy a separate one
     
 2. If you buy a microcontroller that doesn't have an integrated programmer (sometimes called a debugger), buy one and [connect it](../how-to-guides/connect-programmer.md).
 

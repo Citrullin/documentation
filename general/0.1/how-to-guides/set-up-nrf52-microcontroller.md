@@ -58,7 +58,7 @@ To program and flash a microcontroller, you need a Linux-based PC that has the n
     
    **Option 2:** [Install the DAPLink toolchain](https://github.com/mbedmicro/pyOCD#installing). Make sure that you install this toolchain, using the `pip3` command.
 
-7. Clone our forked RIOT OS repository
+7. Clone our forked RIOT OS repository and change into the `BLE-environment-sensor/examples/hello-world` directory
 
     :::info:
     RIOT OS is a modular [microkernel operating system](https://wiki.osdev.org/Microkernel).
@@ -67,23 +67,18 @@ To program and flash a microcontroller, you need a Linux-based PC that has the n
 
     ```bash
     git clone https://github.com/iota-community/BLE-environment-sensor.git
+    cd BLE-environment-sensor/examples/hello-world
     ```
 
-8. Change into the `examples/hello-world` directory
+8. Find the path to your USB-to-UART connector by removing it, executing the `ls /dev/ttyUSB*` command, plugging the USB-to-UART connector back into your PC, then executing the `ls /dev/ttyUSB*` command again. The new entry is your connector.
 
-    ```bash
-    cd examples/hello-world
-    ```
-
-9. Find the path to your USB-to-UART connector by removing it, executing the `ls /dev/ttyUSB*` command, plugging the USB-to-UART connector back into your PC, then executing the `ls /dev/ttyUSB*` command again. The new entry is your connector.
-
-10. Change the permissions for your USB-to-UART connector. Replace the `$USB_PORT` placeholder with the path to your USB-to-UART connector such as `/dev/ttyUSB0`.
+9. Change the permissions for your USB-to-UART connector. Replace the `$USB_PORT` placeholder with the path to your USB-to-UART connector such as `/dev/ttyUSB0`.
 
     ```bash
     sudo chmod 777 $USB_PORT
     ```
 
-11. Flash the 'hello world' example onto your microcontroller. Replace the `$BOARD` AND `$USB_PORT` placeholders with the name of your board and the path to your USB-to-UART connector such as `/dev/ttyUSB0`
+10. Flash the 'hello world' example onto your microcontroller. Replace the `$BOARD` AND `$USB_PORT` placeholders with the name of your board and the path to your USB-to-UART connector such as `/dev/ttyUSB0`
 
     :::info:
     To [find the name of your board](https://api.riot-os.org/group__boards.html), see the RIOT documentation.
@@ -97,13 +92,17 @@ To program and flash a microcontroller, you need a Linux-based PC that has the n
     If you see  a `permission denied` or `arm-none-eabi-gcc version not supported` message, [see our troubleshooting guide](../references/troubleshooting.md).
     :::
 
-You should see something like the following in the shell:
+    You should see something like the following in the shell:
 
-```
-2019-08-27 09:17:09,359 - INFO # main(): This is RIOT! (Version: 2019.10-devel-488-g1b1c9)
-2019-08-27 09:17:09,359 - INFO # Hello World!
-2019-08-27 09:17:09,361 - INFO # You are running RIOT on a(n) nrf52832-mdk board.
-```
+    ```
+    2019-08-27 09:17:09,359 - INFO # main(): This is RIOT! (Version: 2019.10-devel-488-g1b1c9)
+    2019-08-27 09:17:09,359 - INFO # Hello World!
+    2019-08-27 09:17:09,361 - INFO # You are running RIOT on a(n) nrf52832-mdk board.
+    ```
+
+    :::info:
+    If you don't see this in the shell, press the reset button on your microcontroller.
+    :::
 
 :::success: Congratulations :tada:
 Now that you can compile code and flash it to your microcontroller, you're ready to build some real applications.
@@ -111,7 +110,7 @@ Now that you can compile code and flash it to your microcontroller, you're ready
 
 ## Next steps
 
-Follow one of the following microcontroller guides
+Follow one of the our microcontroller guides:
 
 - [Create a low-budget Bosch XDK](../how-to-guides/create-a-low-budget-bosch-xdk-clone.md)
 - [Run an environment sensor server](../how-to-guides/run-a-environment-sensor-and-client.md)
