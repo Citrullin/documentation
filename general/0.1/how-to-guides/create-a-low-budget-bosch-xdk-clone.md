@@ -1,72 +1,53 @@
-# Create a low budget sensor node like the Bosch XDK
-**In this guide, we are going to create a low budget sensor node which has similar features as the Bosch XDK**
+# Create a low-budget sensor application
+
+**In this guide, we create a low-budget sensor application that has similar features to the Bosch XDK.**
 
 ## Prerequisites
 
-- [nRF52832](set-up-nrf52-microcontroller.md)
-- [Connected BME/BMP 280 sensor](connect-bosch-bme-280-bmp-280.md)
-- Optional: [Connected TSL2561 (Lux sensor), VEML6070 (UV sensor)](connect-a-I2C-sensor.md) 
-or [other supported I2C sensors](http://riot-os.org/api/group__drivers__sensors.html)
+- [Set up an nRF52 microcontroller](../how-to-guides/set-up-nrf52-microcontroller.md)
+- [Connect a BME/BMP 280 sensor to the microcontroller](../how-to-guides/connect-bosch-bme-280-bmp-280.md)
+- **Optional:** [Connect a TSL2561 (Lux sensor), VEML6070 (UV sensor)](../how-to-guides/connect-a-I2C-sensor.md) or [other supported I2C sensor](http://riot-os.org/api/group__drivers__sensors.html) to the microcontroller
 
-:::info:
-You might want to read our ["Run a nRF52 sensor and client"](run-a-environment-sensor-and-client.md)
-in order to be able to use this sensor node in an advanced fashion
-:::
+---
 
-1. Clone the forked RIOT OS
-
-    ```bash
-    git clone https://github.com/iota-community/BLE-environment-sensor.git
-    ```
-
-2. Go into examples/saul
+1. Change into the `BLE-environment-sensor/examples/saul` directory
 
     ```bash
     cd BLE-environment-sensor/examples/saul
     ```
 
-3. Add the driver module(s) to the Makefile
+2. In the `Makefile` file, add `USEMODULE += bmx280` under `USEMODULE += ps` so that the driver for the BME/BMP 280 sensor can be compiled into your application
 
     :::info:
-    RIOT OS is a [microkernel operating system](https://wiki.osdev.org/Microkernel).
-    The modulation helps to keep the operating as clean as possible.
-    Only the needed functionality will be compiled into our app binary.
-    This is beneficial for microcontrollers due to a general lower footprint.
-    All DRIVER_NAMES for the pattern ```USEMODULE += DRIVER_NAME``` can be found in the directory
-    drivers. Some driver have a x variable in their namings. 
-    For example the BME/BMP 280 driver is named bmx280.
-    ::: 
+    All driver module names for the pattern `USEMODULE += DRIVER_NAME` are in the `drivers` directory.
+    :::  
     
-    Add ```USEMODULE += bmx280``` to the Makefile. Right under ```USEMODULE += ps```
-    This adds the driver module into the make process and compiles it into your application.
-    
-    If you want to use the TSL2561 as well, you also need to add ```USEMODULE += tsl2561```.
-    For the VEML6070, use ```USEMODULE += veml6070```.
-    
-    4. Compile and flash the OS and application
-    
-    USB_PORT = the usb port your uart-to-usb adapter is connected to. for example: /dev/ttyUSB1
-    
-    ```bash
-    BOARD=nrf52dk PORT=USB_PORT make flash term
-    ```
-
-5. Read the sensor data
-
     :::info:
-    RIOT OS has an [HAL](https://en.wikipedia.org/wiki/Hardware_abstraction) (Hardware abstraction layer) 
-    called [SAUL](https://riot-os.org/api/group__drivers__saul.html) (Sensor Actuator Uber Layer)
-    You can access the sensor by its generic SAUL type. ([sensor.c](https://github.com/iota-community/BLE-environment-sensor/commit/dbd09e190e5f231a3bd575d5137d5ac03d3c563a#diff-65a5e0b8b7c3c44ad2827b59684b75ecR16) contains an example)
+    If you're using the optional TSL2561 and VEML6070 sensors, also add `USEMODULE += tsl2561` and `USEMODULE += veml6070` to the file.
     :::
     
-    We are going to use the shell to access the sensor data.
+3. Compile and flash the operating system and the application. Replace the `$BOARD` AND `$USB_PORT` placeholders with the name of your board and the path to your USB-to-UART connector such as `/dev/ttyUSB0`.
     
-    execute the following command in the shell:
+    ```bash
+    BOARD=BOARD PORT=USB_PORT make flash term
+    ```
+
+    :::info:
+    See the RIOT documentation to [find the name of your board](https://api.riot-os.org/group__boards.html).
+    :::
+
+4. Use the RIOT OS [hardware abstraction layer (HAL)](https://en.wikipedia.org/wiki/Hardware_abstraction) ([SAUL](https://riot-os.org/api/group__drivers__saul.html)) to find a list of all available sensors
+
+    :::info:
+    You can also access the sensor by its [SAUL device class](https://riot-os.org/api/group__drivers__saul.html#ga425be5f49e9c31d8d13d53190a3e7bc2)
+    :::
+    
     ```bash
     saul
     ```
     
-    This returns a list of all available sensors. For example:
+    You should see a list of all available sensors. For example:
+
     ```bash
     ID	Class		Name
     #0	ACT_SWITCH	LED 1
@@ -85,9 +66,10 @@ in order to be able to use this sensor node in an advanced fashion
     #13	SENSE_UV	veml6070
     ```
     
-    By executing  `saul read ID` you can read the current sensor value. 
-    If you want to read all sensors, just execute `saul read all`.
-    
-    The shell should only be used for debugging. 
-    Follow the guide ["Run a nRF52 sensor and client"](../../../blueprints/0.1/environment-sensor/run-a-environment-sensor-and-client.md) to get a complete sensor server and client running.
-    
+5. To read the data from a particular sensor, execute the `saul read` command followed by an ID. To read the data from all sensors, execute the `saul read all` command.
+
+## Next steps
+
+You should read sensor data from a shell session only while you debug an application.
+
+For a production application, you can [set up a sensor server](../how-to-guides/run-a-environment-sensor-and-client.md) that allows clients to connect to it and read its data. 

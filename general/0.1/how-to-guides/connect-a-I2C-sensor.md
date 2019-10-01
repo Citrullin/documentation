@@ -1,58 +1,50 @@
-# Connect a I2C sensor to your nRF52
-**In this guide, we are going to connect a I2C sensor to our nRF52**
+# Connect an I2C sensor to an nRF5 series microcontroller
+
+**In this guide, we connect an I2C sensor to an nRF52 microcontroller**
 
 ## Prerequisites
 
-- nRF52 microcontroller
-- I2C sensor development board
+To complete this guide, you need the following:
 
-:::info
-We use RIOT OS in our examples. If you consider yourself as beginner, 
-you should check the [RIOT OS sensor driver list](http://riot-os.org/api/group__drivers__sensors.html), 
-before buying any sensor. 
-If the sensor you want to use is not in the list, you have to write a driver by yourself.
-You can also use another RTOS or library which supports your driver. 
-:::
+- nRF5 series microcontroller
+- I2C sensor development board
 
 ### I2C
 
-I2C is a serial bus. This means that the bits are send sequentially over the wire. 
-The I2C bus consists only of two wires. 
-SCL is used for the clock and SDA is used to transfer the data.
+I2C is a serial bus, which means that the bits are sent sequentially over the wire. 
+The I2C bus consists of the following wires:
+* **SCL** for the clock
+* **SDA** for transferring data
+
 I2C uses Master-Slave communication. With 7-Bit addressing, 127 addresses are available.
-The I2C bus reserves some addresses for the protocol, 
-so that you end up with 112 addresses for your sensors.
-I2C also has a 10-Bit address space, so that you end up with 1008 addresses for your devices.
-Most sensor use the 7-Bit address space, so we recommend to stick to 7-Bit in order to support most sensors.
-If you use a sensor more than once on a master, 
-you should connect each sensor on a different I2C bus in order to avoid address conflicts.
+The I2C bus reserves some addresses for the protocol, so that you end up with 112 addresses for your sensors.
+
+I2C also has a 10-bit address space, so that you end up with 1008 addresses for your devices.
+
+Most sensors use the 7-bit address space, so we recommend to stick to 7-Bit in order to support most sensors.
+If you use a sensor more than once on a master, you should connect each sensor on a different I2C bus in order to avoid address conflicts.
+
 The I2C protocol does not have any mechanism to resolve address conflicts.
-If your device does not have enough I2C buses, 
-you can use an I2C switch in order to use your sensors.
+If your device does not have enough I2C buses, you can use an I2C switch in order to use your sensors.
 
 ### I2C address selection
 
-Most I2C ICs provide a address selection to avoid address conflicts with other I2C ICs.
+Most I2C integrated circuits provide an address selection to avoid address conflicts with others.
 You should always check the datasheet of your sensor before using it.
-Generally it mentions a PIN you have to pull up or low in order to select the I2C address.
+Generally it mentions a PIN you have to pull up or down to select the I2C address.
+
+1. Connect the SCL and SDA pins to the microcontroller
     
-
-1. Connect SCL and SDA
-
     :::info:
-    If you consider yourself as beginner, you should start with using a I2C sensor development board.
-    If you use the raw IC, you need to pull SCL and SDA to high. [A pull resistor is needed.](https://rheingoldheavy.com/i2c-pull-resistors/)
-    The pull up resistor has also an [effect on the square wave.](http://dsscircuits.com/articles/effects-of-varying-i2c-pull-up-resistors)
-    You might want to check it before designing a board for a production environment.
-    If you use a raw IC, you should understand how the [I2C protocol](http://www.ti.com/lit/an/slva704/slva704.pdf) works before.
+    RIOT OS assigns pins P0.26 and P0.27 to the I2C protocol.
     :::
-    
-    The nRF52 has a feature called [EasyDMA](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fcom.nordic.infocenter.nrf52832.ps.v1.1%2Feasydma.html&cp=3_1_0_9&anchor=easydma).
-    The wire protocols are not statically assigned to any PIN. It is [configured with EasyDMA](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fcom.nordic.infocenter.nrf52832.ps.v1.1%2Ftwim.html&cp=3_1_0_32&anchor=concept_scx_f5p_xr).
-    RIOT OS assigns P0.26 and P0.27 to the I2C protocol.
         
-    | Microcontroller | I2C sensor |
+    | **Microcontroller** | **I2C sensor** |
     |-----------------|------------|
     |      P0.26      |     SDA    |
     |      P0.27      |     SCL    |
+
+    :::info:
+    The nRF52 has a feature called [EasyDMA](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fcom.nordic.infocenter.nrf52832.ps.v1.1%2Feasydma.html&cp=3_1_0_9&anchor=easydma), which allows you to [assign wire protocols to any pin](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fcom.nordic.infocenter.nrf52832.ps.v1.1%2Ftwim.html&cp=3_1_0_32&anchor=concept_scx_f5p_xr).
+    :::
     
