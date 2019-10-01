@@ -81,6 +81,8 @@
     
 7. [Connect your programmer and UART-to-USB Adapter](connect-programmer-and-uart-adapter.md)
 
+8. [Install the nRF toolchain](set-up-nrf-toolchain.md)
+
 8. Optional: Buy an I2C environment sensor. For example the BME280 used in the [run an environment sensor and client](run-a-environment-sensor-and-client.md) guide.
 
     Check the [driver list](http://www.riot-os.org/api/group__drivers__saul.html) before. 
