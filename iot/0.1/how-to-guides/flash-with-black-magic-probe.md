@@ -17,7 +17,7 @@
 sudo apt-get install python3
 ```
 
-5. Go into your application folder
+3. Go into your application folder
 
 `$RIOT_base` is the base where you cloned the git repository into.
 
@@ -26,25 +26,27 @@ Example:
 cd $RIOT_base/examples/hello_world
 ```
 
-6. Install python requirements
+4. [Install ARM GCC toolchain](install-arm-gcc-toolchain.md)
+
+5. Install python requirements
 
 ```bash
 pip install humanize pygdbmi pyserial progressbar
 ```
 
-7. Build application
+6. Build application
 
 ```bash
 BOARD=nrf52dk make 
 ```
 
-8. Erase flash storage of the microcontroller
+7. Erase flash storage of the microcontroller
 
 ```bash
 ../../dist/tools/bmp/bmp.py --connect-srst erase
 ```
 
-9. Connect to microcontroller shell
+8. Connect to microcontroller shell
 
 `$RIOT_base` is the based where you cloned the repository into.
 
